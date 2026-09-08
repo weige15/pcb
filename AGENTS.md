@@ -10,6 +10,8 @@
 
 # Core Principles
 
+**運行程式前，必須先: source ~/.venv/bin/activate 開啟虛擬環境，並且 nvidia-smi 查看空閒的GPU。**
+
 1. **先理解目標**
 
    * 確認真正需求、限制與完成條件。
