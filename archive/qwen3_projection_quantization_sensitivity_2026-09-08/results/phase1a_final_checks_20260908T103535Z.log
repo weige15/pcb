@@ -1,0 +1,98 @@
+ANALYSIS PASS: validated 896 rows and recomputed paired CIs
+ANALYZE-ONLY REPRODUCTION: 4 CSV/analysis/report/draw hashes unchanged
+NEGATIVE CONTROL REJECTED: blocked status : Blocked/incomplete run cannot produce a results report
+NEGATIVE CONTROL REJECTED: missing condition : Missing/duplicate completed conditions
+NEGATIVE CONTROL REJECTED: smoke failed : Smoke controls missing/failed
+NEGATIVE CONTROL REJECTED: wrong restored NLL : Restoration controls failed
+NEGATIVE CONTROL REJECTED: CausalLM alignment failed : CausalLM alignment checks missing/failed
+NEGATIVE CONTROL REJECTED: non-target changed : Intervention control failed
+NEGATIVE CONTROL REJECTED: eval changed weight : Intervention control failed
+NEGATIVE CONTROL REJECTED: last intervention not restored : Intervention control failed
+NEGATIVE CONTROL REJECTED: wrong module shape : Invalid modified-module evidence
+NEGATIVE CONTROL REJECTED: final state not original : Final checkpoint restoration not verified
+NEGATIVE GATES: 10/10 rejected; real outputs unchanged
+Run times: 2026-09-08T10:12:41.229212+00:00 2026-09-08T10:30:17.129248+00:00
+Peak allocated/reserved bytes: 8386081280 8514437120
+Completed cells: [('BF16', 512, 64, 32768), ('BF16', 2048, 64, 131072), ('WQ8', 512, 64, 32768), ('WQ8', 2048, 64, 131072), ('WQ4', 512, 64, 32768), ('WQ4', 2048, 64, 131072), ('WK8', 512, 64, 32768), ('WK8', 2048, 64, 131072), ('WK4', 512, 64, 32768), ('WK4', 2048, 64, 131072), ('WV8', 512, 64, 32768), ('WV8', 2048, 64, 131072), ('WV4', 512, 64, 32768), ('WV4', 2048, 64, 131072)]
+Intervention controls: [('WQ4', 'smoke', 36, 377487360, True, True, True), ('WQ8', 'formal', 36, 377487360, True, True, True), ('WQ4', 'formal', 36, 377487360, True, True, True), ('WK8', 'formal', 36, 94371840, True, True, True), ('WK4', 'formal', 36, 94371840, True, True, True), ('WV8', 'formal', 36, 94371840, True, True, True), ('WV4', 'formal', 36, 94371840, True, True, True)]
+Smoke: {
+  "passed": true,
+  "records": [
+    {
+      "context": 512,
+      "sample_id": 0,
+      "baseline_nll": 2.7769124507904053,
+      "baseline_self_kl": 0.0,
+      "causal_lm_api_checks": [
+        {
+          "start": 0,
+          "positions": 64,
+          "logits_bitwise_equal": true,
+          "cross_entropy_sum": 290.790771484375,
+          "metric_nll_sum": 290.79083251953125
+        },
+        {
+          "start": 448,
+          "positions": 64,
+          "logits_bitwise_equal": true,
+          "cross_entropy_sum": 131.38648986816406,
+          "metric_nll_sum": 131.38648986816406
+        }
+      ],
+      "wq4_nll": 2.791806221008301,
+      "wq4_kl": 0.03160659223794937,
+      "scored_positions": 512,
+      "finite": true,
+      "restored_hidden_bitwise_equal": true,
+      "restored_nll": 2.7769124507904053,
+      "restored_kl": 0.0
+    },
+    {
+      "context": 2048,
+      "sample_id": 0,
+      "baseline_nll": 2.4777376651763916,
+      "baseline_self_kl": 0.0,
+      "causal_lm_api_checks": [
+        {
+          "start": 0,
+          "positions": 64,
+          "logits_bitwise_equal": true,
+          "cross_entropy_sum": 290.78985595703125,
+          "metric_nll_sum": 290.7898254394531
+        },
+        {
+          "start": 1984,
+          "positions": 64,
+          "logits_bitwise_equal": true,
+          "cross_entropy_sum": 136.47430419921875,
+          "metric_nll_sum": 136.47430419921875
+        }
+      ],
+      "wq4_nll": 2.508615493774414,
+      "wq4_kl": 0.021800504997372627,
+      "scored_positions": 2048,
+      "finite": true,
+      "restored_hidden_bitwise_equal": true,
+      "restored_nll": 2.4777376651763916,
+      "restored_kl": 0.0
+    }
+  ],
+  "finished_utc": "2026-09-08T10:15:32.477854+00:00",
+  "note": "one selected block, both contexts; controls only, not independent samples"
+}
+test_chunked_metric_matches_dense_including_partial_chunk (test_phase1a.Phase1aTests.test_chunked_metric_matches_dense_including_partial_chunk) ... ok
+test_config_is_fixed (test_phase1a.Phase1aTests.test_config_is_fixed) ... ok
+test_control_gate_rejects_missing_or_blocked_evidence (test_phase1a.Phase1aTests.test_control_gate_rejects_missing_or_blocked_evidence) ... ok
+test_launcher_records_inventory_failure (test_phase1a.Phase1aTests.test_launcher_records_inventory_failure) ... ok
+test_metric_direction_nll_finite_and_alignment (test_phase1a.Phase1aTests.test_metric_direction_nll_finite_and_alignment) ... ok
+test_paired_bootstrap_preserves_pairs (test_phase1a.Phase1aTests.test_paired_bootstrap_preserves_pairs) ... ok
+test_result_contract_detects_tampering_and_ppl_reduction (test_phase1a.Phase1aTests.test_result_contract_detects_tampering_and_ppl_reduction) ... ok
+test_round_ties_even_and_invalid_groups (test_phase1a.Phase1aTests.test_round_ties_even_and_invalid_groups) ... ok
+test_rtn_matches_independent_numpy_reference (test_phase1a.Phase1aTests.test_rtn_matches_independent_numpy_reference) ... ok
+test_sampling_boundaries_tail_and_insufficient_data (test_phase1a.Phase1aTests.test_sampling_boundaries_tail_and_insufficient_data) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.333s
+
+OK
+ALL FINAL CHECKS PASS (human requirement audit still required)

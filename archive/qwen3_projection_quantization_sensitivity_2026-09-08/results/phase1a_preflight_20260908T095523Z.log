@@ -1,0 +1,85 @@
+UTC: 2026-09-08T09:55:23+00:00
+Host: basic-1
+CWD: /nfs/home/s314511048/pcb
+
+GPU inventory (a failed device may make nvidia-smi return nonzero):
+index, uuid, pci.bus_id, name, memory.total [MiB], memory.free [MiB], driver_version
+0, GPU-0ba621dc-6dc5-e2e6-fad5-8e089bd4a91a, 00000000:1B:00.0, NVIDIA GeForce RTX 3090, 24576 MiB, 23681 MiB, 580.159.03
+1, GPU-30001dcd-9aa9-924d-e331-c9562c8c9659, 00000000:1C:00.0, NVIDIA GeForce RTX 3090, 24576 MiB, 13415 MiB, 580.159.03
+2, GPU-74d97f46-6284-1055-698a-e2db4e9c744b, 00000000:1D:00.0, NVIDIA GeForce RTX 3090, 24576 MiB, 24121 MiB, 580.159.03
+3, GPU-5bc73c3c-34f7-5f72-b30a-f5b9df90c269, 00000000:1E:00.0, NVIDIA GeForce RTX 3090, 24576 MiB, 24121 MiB, 580.159.03
+4, GPU-daa3c5f3-ae58-28e9-e065-7ec92537ccb1, 00000000:89:00.0, NVIDIA GeForce RTX 3090, 24576 MiB, 5481 MiB, 580.159.03
+5, GPU-7f8c92f6-cc4a-3254-e0d4-d0eb31d7fb79, 00000000:8A:00.0, NVIDIA GeForce RTX 3090, 24576 MiB, 15717 MiB, 580.159.03
+6, GPU-7fc141af-7228-4a0f-9ac7-78bb3615aae5, 00000000:8B:00.0, NVIDIA GeForce RTX 3090, 24576 MiB, 24121 MiB, 580.159.03
+7, GPU-01fe0496-2d96-9bad-bca2-935ad704d1c7, 00000000:8C:00.0, NVIDIA GeForce RTX 3090, 24576 MiB, 5481 MiB, 580.159.03
+nvidia-smi exit: 0
+
+Selected physical GPU:
+index, uuid, pci.bus_id, name, memory.total [MiB], memory.free [MiB], utilization.gpu [%]
+0, GPU-0ba621dc-6dc5-e2e6-fad5-8e089bd4a91a, 00000000:1B:00.0, NVIDIA GeForce RTX 3090, 24576 MiB, 23681 MiB, 0 %
+nvidia-smi -i 0 exit: 0
+
+Driver and device nodes:
+crw-rw-rw- 1 root root 195,   0 Aug 23 22:59 /dev/nvidia0
+crw-rw-rw- 1 root root 195,   1 Aug 23 22:59 /dev/nvidia1
+crw-rw-rw- 1 root root 195,   2 Aug 23 22:59 /dev/nvidia2
+crw-rw-rw- 1 root root 195,   3 Aug 23 22:59 /dev/nvidia3
+crw-rw-rw- 1 root root 195,   4 Aug 23 22:59 /dev/nvidia4
+crw-rw-rw- 1 root root 195,   5 Aug 23 22:59 /dev/nvidia5
+crw-rw-rw- 1 root root 195,   6 Aug 23 22:59 /dev/nvidia6
+crw-rw-rw- 1 root root 195,   7 Aug 23 22:59 /dev/nvidia7
+crw-rw-rw- 1 root root 195, 255 Aug 23 22:59 /dev/nvidiactl
+crw-rw-rw- 1 root root 195, 254 Aug 23 22:59 /dev/nvidia-modeset
+crw-rw-rw- 1 root root 510,   0 Aug 23 22:59 /dev/nvidia-uvm
+crw-rw-rw- 1 root root 510,   1 Aug 23 22:59 /dev/nvidia-uvm-tools
+
+/dev/nvidia-caps:
+total 0
+cr-------- 1 root root 235, 1 Aug 23 22:59 nvidia-cap1
+cr--r--r-- 1 root root 235, 2 Aug 23 22:59 nvidia-cap2
+
+Python / CUDA / cached assets:
+python: /nfs/home/s314511048/.venv/bin/python 3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]
+torch: 2.5.1+cu121
+transformers: 5.16.1
+datasets: 2.17.1
+huggingface-hub: 1.29.0
+safetensors: 0.8.0
+numpy: 1.26.4
+accelerate: 1.14.0
+pyarrow: 24.0.0
+pytest: 9.0.3
+VIRTUAL_ENV: /nfs/home/s314511048/.venv
+CUDA_DEVICE_ORDER: PCI_BUS_ID
+CUDA_VISIBLE_DEVICES: 0
+HF_HOME: /nfs/home/s314511048/.cache/huggingface
+HF_HUB_CACHE: /nfs/home/s314511048/.cache/huggingface/hub
+HF_HUB_OFFLINE: 1
+HF_DATASETS_OFFLINE: 1
+LD_LIBRARY_PATH: /usr/local/cuda-12.4/lib64:/nfs/home/s314511048/.venv/lib/python3.12/site-packages/
+torch/lib:/usr/local/cuda-12.4/lib64:/nfs/home/s314511048/.venv/lib/python3.12/site-packages/
+torch/lib:
+CUDA driver cuInit: 0 b'CUDA_SUCCESS'
+torch CUDA build: 12.1
+torch CUDA available: True
+torch device count: 1
+torch device 0: NVIDIA GeForce RTX 3090
+BF16 supported: True
+BF16 CUDA matmul: PASS
+cached asset: models--Qwen--Qwen3-4B revision: 1cfa9a7208912126459214e8b04321603b3df60c snapshot: /nfs/home/s314511048/.cache/huggingface/hub/models--Qwen--Qwen3-4B/snapshots/1cfa9a7208912126459214e8b04321603b3df60c
+model config: {"architectures": ["Qwen3ForCausalLM"], "attention_bias": false, "attention_dropout": 0.0, "bos_token_id": 151643, "eos_token_id": 151645, "head_dim": 128, "hidden_act": "silu", "hidden_size": 2560, "initializer_range": 0.02, "intermediate_size": 9728, "max_position_embeddings": 40960, "max_window_layers": 36, "model_type": "qwen3", "num_attention_heads": 32, "num_hidden_layers": 36, "num_key_value_heads": 8, "rms_norm_eps": 1e-06, "rope_scaling": null, "rope_theta": 1000000, "sliding_window": null, "tie_word_embeddings": true, "torch_dtype": "bfloat16", "transformers_version": "4.51.0", "use_cache": true, "use_sliding_window": false, "vocab_size": 151936}
+readable checkpoint header: model-00001-of-00003.safetensors bytes: 3957900840
+readable checkpoint header: model-00002-of-00003.safetensors bytes: 3987450520
+readable checkpoint header: model-00003-of-00003.safetensors bytes: 99630640
+tokenizer asset: tokenizer.json bytes: 11422654
+tokenizer asset: tokenizer_config.json bytes: 9732
+tokenizer asset: vocab.json bytes: 2776833
+tokenizer asset: merges.txt bytes: 1671853
+Checkpoint headers/files present; full model load NOT tested.
+cached asset: datasets--Salesforce--wikitext revision: b08601e04326c79dfdd32d625aee71d232d685c3 snapshot: /nfs/home/s314511048/.cache/huggingface/hub/datasets--Salesforce--wikitext/snapshots/b08601e04326c79dfdd32d625aee71d232d685c3
+readable test parquet: /nfs/home/s314511048/.cache/huggingface/hub/datasets--Salesforce--wikitext/snapshots/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/test-00000-of-00001.parquet rows: 4358 nulls: 0
+Dataset source readable; tokenization and 64-block selection NOT tested.
+Transformers / datasets entry-point imports: PASS (not a model load)
+PREFLIGHT: PASS (not experiment completion) {"cuda_bf16": true, "cached_asset_checks": true, "entry_point_imports": true}
+
+Preflight exit: 0

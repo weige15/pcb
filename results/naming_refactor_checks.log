@@ -1,0 +1,6 @@
+Archive: all 51 original files unchanged
+Scientific function AST unchanged: fake_quantize, targets_for, hidden_for, metric_from_logits, score, paired_bootstrap, sample_blocks, model_hashes, validate_controls
+Pinned experiment config bytes unchanged
+No stage-number filenames/imports/artifacts in active scripts
+Working local Markdown links: 57
+REFRACTOR CHECKS PASS; no GPU experiment launched

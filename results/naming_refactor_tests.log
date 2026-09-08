@@ -1,0 +1,17 @@
+test_archived_results_and_renamed_analysis_are_unchanged (test_projection_quantization_sensitivity.ProjectionQuantizationSensitivityTests.test_archived_results_and_renamed_analysis_are_unchanged) ... ok
+test_chunked_metric_matches_dense_including_partial_chunk (test_projection_quantization_sensitivity.ProjectionQuantizationSensitivityTests.test_chunked_metric_matches_dense_including_partial_chunk) ... ok
+test_config_is_fixed (test_projection_quantization_sensitivity.ProjectionQuantizationSensitivityTests.test_config_is_fixed) ... ok
+test_control_gate_rejects_missing_or_blocked_evidence (test_projection_quantization_sensitivity.ProjectionQuantizationSensitivityTests.test_control_gate_rejects_missing_or_blocked_evidence) ... ok
+test_launcher_records_inventory_failure (test_projection_quantization_sensitivity.ProjectionQuantizationSensitivityTests.test_launcher_records_inventory_failure) ... ok
+test_metric_direction_nll_finite_and_alignment (test_projection_quantization_sensitivity.ProjectionQuantizationSensitivityTests.test_metric_direction_nll_finite_and_alignment) ... ok
+test_named_cli_entry_points_and_overwrite_guard (test_projection_quantization_sensitivity.ProjectionQuantizationSensitivityTests.test_named_cli_entry_points_and_overwrite_guard) ... ok
+test_paired_bootstrap_preserves_pairs (test_projection_quantization_sensitivity.ProjectionQuantizationSensitivityTests.test_paired_bootstrap_preserves_pairs) ... ok
+test_result_contract_detects_tampering_and_ppl_reduction (test_projection_quantization_sensitivity.ProjectionQuantizationSensitivityTests.test_result_contract_detects_tampering_and_ppl_reduction) ... ok
+test_round_ties_even_and_invalid_groups (test_projection_quantization_sensitivity.ProjectionQuantizationSensitivityTests.test_round_ties_even_and_invalid_groups) ... ok
+test_rtn_matches_independent_numpy_reference (test_projection_quantization_sensitivity.ProjectionQuantizationSensitivityTests.test_rtn_matches_independent_numpy_reference) ... ok
+test_sampling_boundaries_tail_and_insufficient_data (test_projection_quantization_sensitivity.ProjectionQuantizationSensitivityTests.test_sampling_boundaries_tail_and_insufficient_data) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 15.031s
+
+OK

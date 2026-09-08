@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/nfs/home/s314511048/pcb/scripts/phase1a.py", line 529, in <module>
+    main()
+  File "/nfs/home/s314511048/pcb/scripts/phase1a.py", line 477, in main
+    model_path, indices, blocks = prepare_data(cfg, out, manifest)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/home/s314511048/pcb/scripts/phase1a.py", line 102, in prepare_data
+    model_path = Path(snapshot_download(cfg["model_id"], revision=cfg["model_revision"], local_files_only=True))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/home/s314511048/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/nfs/home/s314511048/.venv/lib/python3.12/site-packages/huggingface_hub/_snapshot_download.py", line 321, in snapshot_download
+    _raise_if_incomplete_snapshot(
+  File "/nfs/home/s314511048/.venv/lib/python3.12/site-packages/huggingface_hub/_snapshot_download.py", line 576, in _raise_if_incomplete_snapshot
+    raise IncompleteSnapshotError(
+huggingface_hub.errors.IncompleteSnapshotError: The cached snapshot for 'Qwen/Qwen3-4B' (revision '1cfa9a7208912126459214e8b04321603b3df60c', commit 1cfa9a7208912126459214e8b04321603b3df60c) is incomplete: 1 file(s) are missing (.gitattributes). Outgoing traffic is disabled ('local_files_only=True'). Re-run the download with network access to complete the snapshot.

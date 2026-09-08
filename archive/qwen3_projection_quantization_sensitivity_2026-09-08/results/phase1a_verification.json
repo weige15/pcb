@@ -1,0 +1,45 @@
+{
+  "rows": 896,
+  "conditions": 14,
+  "real_controls_gate": "PASS",
+  "source_hashes": {
+    "scripts/phase1a.py": "440ce303a7944493344e8a1272053e0bd39379cb4a1a2265446a980809be0de9",
+    "scripts/run_phase1a.sh": "27801227e62c42e5ebde3c9f083eb653d5118fc132a097c40307699342f4537c",
+    "scripts/phase1a_config.json": "93dbd1c1f1a85b41e33f6858dcec11b33a7d0cbcef40cecc21813f47666ba8a4",
+    "phase1a.md": "ee8a19b6f1eca980c11c5a98dd96f33d83166b3d15021ec13b512cf51fc9d30b"
+  },
+  "artifact_hashes": {
+    "phase1a_config.json": "d3089a9efc1920573cd560255c0f183b7c1c7d0cd29d90897200768d47f2a588",
+    "phase1a_tokens.npz": "0c9a23116a06885be09cb0a2a703a6416a33b7d61ab5702be13979a38d884061",
+    "phase1a.csv": "b1500d55294185cf6bc5df6cd051c2a379e56e4c5317f1bf9556d58339460697",
+    "phase1a_bootstrap_indices.npy": "83a8263f15fc6c2b8aa775774e23c1fd9c0904cf114d08953e24adecf2363625",
+    "phase1a_analysis.json": "9385d9ef8654e3e366ffef7ab97f84c93e2b4a278177611c1860d00838849162",
+    "phase1a_report.md": "dd9c6670e3353d6c318781683d62bd107fd281b2b8c673a7d68967073017da5d",
+    "tokenizer/chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+    "tokenizer/tokenizer.json": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+    "tokenizer/tokenizer_config.json": "1cc816812993bff176eb4f7495433b736f06fba9b6e7b05cac7b4a1780650c95"
+  },
+  "retokenization": {
+    "rows": 4358,
+    "tokens": 299078,
+    "full_blocks": 145,
+    "tail_tokens": 1973,
+    "all_64_blocks_match": true
+  },
+  "checkpoint_and_rtn": {
+    "original_parameters_hashed": 398,
+    "independent_quantizations_bitwise_equal": 216,
+    "module_records_checked": 252
+  },
+  "independent_statistics": {
+    "summary_cells": 14,
+    "paired_contrasts": 24,
+    "draws": [
+      2000,
+      64
+    ],
+    "passed": true
+  },
+  "separate_smoke_reproduced_exactly": true,
+  "status": "PASS: artifact audit; see phase1a_audit.md for requirement-to-evidence mapping"
+}

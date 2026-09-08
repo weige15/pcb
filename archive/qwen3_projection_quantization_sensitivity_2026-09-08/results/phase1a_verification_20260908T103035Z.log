@@ -1,0 +1,9 @@
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+Traceback (most recent call last):
+  File "/nfs/home/s314511048/pcb/scripts/verify_phase1a.py", line 155, in <module>
+    main()
+  File "/nfs/home/s314511048/pcb/scripts/verify_phase1a.py", line 108, in main
+    check(quant_hash == record["quantized_sha256"], f"Independent RTN differs: {name} bit={bits}")
+  File "/nfs/home/s314511048/pcb/scripts/verify_phase1a.py", line 25, in check
+    raise ValueError(message)
+ValueError: Independent RTN differs: model.layers.0.self_attn.k_proj.weight bit=8

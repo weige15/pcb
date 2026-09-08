@@ -1,0 +1,56 @@
+Tue Sep  8 18:09:19 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.159.03             Driver Version: 580.159.03     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 3090        On  |   00000000:1B:00.0 Off |                  N/A |
+| 44%   51C    P2            120W /  275W |     444MiB /  24576MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GeForce RTX 3090        On  |   00000000:1C:00.0 Off |                  N/A |
+| 68%   67C    P2            273W /  275W |   10710MiB /  24576MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GeForce RTX 3090        On  |   00000000:1D:00.0 Off |                  N/A |
+| 30%   28C    P8             22W /  275W |       4MiB /  24576MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GeForce RTX 3090        On  |   00000000:1E:00.0 Off |                  N/A |
+| 30%   27C    P8             25W /  275W |       4MiB /  24576MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA GeForce RTX 3090        On  |   00000000:89:00.0 Off |                  N/A |
+| 30%   29C    P8             17W /  275W |       4MiB /  24576MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA GeForce RTX 3090        On  |   00000000:8A:00.0 Off |                  N/A |
+| 93%   72C    P2            274W /  275W |    8408MiB /  24576MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA GeForce RTX 3090        On  |   00000000:8B:00.0 Off |                  N/A |
+| 30%   26C    P8             16W /  275W |       4MiB /  24576MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA GeForce RTX 3090        On  |   00000000:8C:00.0 Off |                  N/A |
+| 30%   25C    P8             16W /  275W |       4MiB /  24576MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    1   N/A  N/A          710060      C   python                                10700MiB |
+|    5   N/A  N/A          712091      C   python                                 8398MiB |
++-----------------------------------------------------------------------------------------+
+Launch UTC: 2026-09-08T10:09:19+00:00
+Command: bash scripts/run_phase1a.sh results/smoke_20260908_fixed --smoke-only 
+CUDA_VISIBLE_DEVICES=GPU-74d97f46-6284-1055-698a-e2db4e9c744b
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   4%|▍         | 15/398 [00:00<00:02, 129.50it/s]Loading weights:   7%|▋         | 28/398 [00:00<00:03, 108.24it/s]Loading weights:  11%|█         | 42/398 [00:00<00:03, 118.43it/s]Loading weights:  14%|█▍        | 55/398 [00:00<00:03, 102.16it/s]Loading weights:  17%|█▋        | 69/398 [00:00<00:02, 111.11it/s]Loading weights:  21%|██        | 82/398 [00:00<00:02, 115.63it/s]Loading weights:  25%|██▍       | 98/398 [00:00<00:02, 111.02it/s]Loading weights:  28%|██▊       | 113/398 [00:00<00:02, 119.20it/s]Loading weights:  32%|███▏      | 126/398 [00:01<00:02, 106.54it/s]Loading weights:  35%|███▍      | 138/398 [00:01<00:02, 103.49it/s]Loading weights:  38%|███▊      | 152/398 [00:01<00:02, 99.98it/s] Loading weights:  41%|████      | 163/398 [00:01<00:02, 100.62it/s]Loading weights:  45%|████▌     | 180/398 [00:01<00:01, 116.14it/s]Loading weights:  48%|████▊     | 192/398 [00:01<00:01, 113.03it/s]Loading weights:  52%|█████▏    | 207/398 [00:01<00:01, 116.03it/s]Loading weights:  55%|█████▌    | 219/398 [00:01<00:01, 107.10it/s]Loading weights:  58%|█████▊    | 230/398 [00:02<00:01, 106.63it/s]Loading weights:  61%|██████    | 241/398 [00:02<00:01, 102.14it/s]Loading weights:  64%|██████▎   | 253/398 [00:02<00:01, 103.92it/s]Loading weights:  66%|██████▋   | 264/398 [00:02<00:01, 98.87it/s] Loading weights:  70%|██████▉   | 278/398 [00:02<00:01, 107.60it/s]Loading weights:  73%|███████▎  | 290/398 [00:02<00:01, 107.30it/s]Loading weights:  76%|███████▌  | 301/398 [00:02<00:00, 101.06it/s]Loading weights:  78%|███████▊  | 312/398 [00:02<00:00, 100.77it/s]Loading weights:  81%|████████  | 323/398 [00:03<00:00, 98.87it/s] Loading weights:  84%|████████▍ | 335/398 [00:03<00:00, 100.27it/s]Loading weights:  87%|████████▋ | 346/398 [00:03<00:00, 101.77it/s]Loading weights:  90%|████████▉ | 357/398 [00:03<00:00, 102.91it/s]Loading weights:  92%|█████████▏| 368/398 [00:03<00:00, 102.98it/s]Loading weights:  95%|█████████▌| 379/398 [00:03<00:00, 98.98it/s] Loading weights:  98%|█████████▊| 390/398 [00:03<00:00, 101.00it/s]Loading weights: 100%|██████████| 398/398 [00:03<00:00, 107.43it/s]
+SMOKE PASS: BF16/WQ4, intervention hashes, CausalLM alignment, restored baseline
+FINISHED status=smoke_only_not_complete conditions=0/14 output=/nfs/home/s314511048/pcb/results/smoke_20260908_fixed

@@ -1,0 +1,29 @@
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+{
+  "rows": 896,
+  "conditions": 14,
+  "real_controls_gate": "PASS",
+  "retokenization": {
+    "rows": 4358,
+    "tokens": 299078,
+    "full_blocks": 145,
+    "tail_tokens": 1973,
+    "all_64_blocks_match": true
+  },
+  "checkpoint_and_rtn": {
+    "original_parameters_hashed": 398,
+    "independent_quantizations_bitwise_equal": 216,
+    "module_records_checked": 252
+  },
+  "independent_statistics": {
+    "summary_cells": 14,
+    "paired_contrasts": 24,
+    "draws": [
+      2000,
+      64
+    ],
+    "passed": true
+  },
+  "separate_smoke_reproduced_exactly": true,
+  "status": "PASS: artifact audit; see phase1a_audit.md for requirement-to-evidence mapping"
+}

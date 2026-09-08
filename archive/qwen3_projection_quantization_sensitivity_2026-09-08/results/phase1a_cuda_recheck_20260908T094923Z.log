@@ -1,0 +1,31 @@
+UTC: 2026-09-08T09:49:23+00:00
+Host: basic-2
+CWD: /nfs/home/s314511048/pcb
+index, uuid, pci.bus_id, name, memory.total [MiB], memory.free [MiB], utilization.gpu [%], driver_version
+0, GPU-384b6377-8f0c-e3d2-8b3a-b3408b54fd53, 00000000:1D:00.0, NVIDIA GeForce RTX 3090, 24576 MiB, 24124 MiB, 0 %, 580.159.03
+Python: /nfs/home/s314511048/.venv/bin/python 3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]
+VIRTUAL_ENV: /nfs/home/s314511048/.venv
+CUDA_DEVICE_ORDER: PCI_BUS_ID
+CUDA_VISIBLE_DEVICES: 0
+LD_LIBRARY_PATH: /usr/local/cuda-12.4/lib64:/nfs/home/s314511048/.venv/lib/python3.12/site-packages/
+torch/lib:/usr/local/cuda-12.4/lib64:/nfs/home/s314511048/.venv/lib/python3.12/site-packages/
+torch/lib:
+torch: 2.5.1+cu121 CUDA build: 12.1
+cuInit(0): 999
+/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at ../c10/cuda/CUDAFunctions.cpp:108.)
+  return torch._C._cuda_getDeviceCount() > 0
+/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:716: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+CUDA available: False device count: 0
+Traceback (most recent call last):
+  File "<string>", line 9, in <module>
+  File "/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py", line 493, in get_device_name
+    return get_device_properties(device).name
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py", line 523, in get_device_properties
+    _lazy_init()  # will define _get_device_properties
+    ^^^^^^^^^^^^
+  File "/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py", line 319, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero.
+CUDA recheck exit: 1

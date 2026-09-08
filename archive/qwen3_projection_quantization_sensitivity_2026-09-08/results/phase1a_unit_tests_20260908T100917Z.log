@@ -1,0 +1,15 @@
+test_chunked_metric_matches_dense_including_partial_chunk (test_phase1a.Phase1aTests.test_chunked_metric_matches_dense_including_partial_chunk) ... ok
+test_config_is_fixed (test_phase1a.Phase1aTests.test_config_is_fixed) ... ok
+test_control_gate_rejects_missing_or_blocked_evidence (test_phase1a.Phase1aTests.test_control_gate_rejects_missing_or_blocked_evidence) ... ok
+test_launcher_records_inventory_failure (test_phase1a.Phase1aTests.test_launcher_records_inventory_failure) ... ok
+test_metric_direction_nll_finite_and_alignment (test_phase1a.Phase1aTests.test_metric_direction_nll_finite_and_alignment) ... ok
+test_paired_bootstrap_preserves_pairs (test_phase1a.Phase1aTests.test_paired_bootstrap_preserves_pairs) ... ok
+test_result_contract_detects_tampering_and_ppl_reduction (test_phase1a.Phase1aTests.test_result_contract_detects_tampering_and_ppl_reduction) ... ok
+test_round_ties_even_and_invalid_groups (test_phase1a.Phase1aTests.test_round_ties_even_and_invalid_groups) ... ok
+test_rtn_matches_independent_numpy_reference (test_phase1a.Phase1aTests.test_rtn_matches_independent_numpy_reference) ... ok
+test_sampling_boundaries_tail_and_insufficient_data (test_phase1a.Phase1aTests.test_sampling_boundaries_tail_and_insufficient_data) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.374s
+
+OK

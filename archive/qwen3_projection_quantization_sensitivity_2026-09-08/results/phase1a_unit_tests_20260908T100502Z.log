@@ -1,0 +1,21 @@
+test_chunked_metric_matches_dense_including_partial_chunk (test_phase1a.Phase1aTests.test_chunked_metric_matches_dense_including_partial_chunk) ... FAIL
+test_config_is_fixed (test_phase1a.Phase1aTests.test_config_is_fixed) ... ok
+test_metric_direction_nll_finite_and_alignment (test_phase1a.Phase1aTests.test_metric_direction_nll_finite_and_alignment) ... ok
+test_paired_bootstrap_preserves_pairs (test_phase1a.Phase1aTests.test_paired_bootstrap_preserves_pairs) ... ok
+test_result_contract_detects_tampering_and_ppl_reduction (test_phase1a.Phase1aTests.test_result_contract_detects_tampering_and_ppl_reduction) ... ok
+test_round_ties_even_and_invalid_groups (test_phase1a.Phase1aTests.test_round_ties_even_and_invalid_groups) ... ok
+test_rtn_matches_independent_numpy_reference (test_phase1a.Phase1aTests.test_rtn_matches_independent_numpy_reference) ... ok
+test_sampling_boundaries_tail_and_insufficient_data (test_phase1a.Phase1aTests.test_sampling_boundaries_tail_and_insufficient_data) ... ok
+
+======================================================================
+FAIL: test_chunked_metric_matches_dense_including_partial_chunk (test_phase1a.Phase1aTests.test_chunked_metric_matches_dense_including_partial_chunk)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/nfs/home/s314511048/pcb/tests/test_phase1a.py", line 109, in test_chunked_metric_matches_dense_including_partial_chunk
+    self.assertAlmostEqual(dense[0].item() / 17, nll.item(), places=6)
+AssertionError: 3.6834416108972885 != 3.6834421157836914 within 6 places (5.048864029078004e-07 difference)
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.321s
+
+FAILED (failures=1)

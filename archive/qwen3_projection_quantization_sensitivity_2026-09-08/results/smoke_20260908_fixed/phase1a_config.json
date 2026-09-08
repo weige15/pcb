@@ -1,0 +1,35 @@
+{
+  "model_id": "Qwen/Qwen3-4B",
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "tokenizer_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "dataset_id": "Salesforce/wikitext",
+  "dataset_revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+  "dataset_config": "wikitext-2-raw-v1",
+  "split": "test",
+  "dtype": "bfloat16",
+  "attention_backend": "sdpa",
+  "sdpa_kernel": "FLASH_ATTENTION",
+  "batch_size": 1,
+  "use_cache": false,
+  "group_size": 128,
+  "conditions": [
+    "BF16",
+    "WQ8",
+    "WQ4",
+    "WK8",
+    "WK4",
+    "WV8",
+    "WV4"
+  ],
+  "contexts": [
+    512,
+    2048
+  ],
+  "block_tokens": 2049,
+  "sample_blocks": 64,
+  "seed": 42,
+  "sampling": "numpy.random.default_rng(42).choice(n_blocks, 64, replace=False), in draw order",
+  "metric_chunk_positions": 64,
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 42
+}
