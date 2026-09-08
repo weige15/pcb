@@ -2,7 +2,7 @@
 
 ## Project Summary
 
-[`projection_quantization_sensitivity.md`](../projection_quantization_sensitivity.md) 定義 Qwen3-4B 的 WQ/WK/WV-only 4/8-bit grouped RTN 權重量化敏感度實驗：BF16 baseline，64 blocks，512/2048預測位置，共14條件。不測packed GEMM加速、KV lifetime或serving。
+Qwen3-4B projection-weight quantization sensitivity。歷史全層實驗14條件仍保留；本輪逐層實驗固定2048預測位置，每次只改一層的一個WQ/WK/WV weight為group128 RTN4，共108介入+BF16。協定及交付都在 `results/layerwise_projection_sensitivity/`。不擴展scheduler。
 
 ## Setup
 
@@ -13,144 +13,133 @@ source ~/.venv/bin/activate
 nvidia-smi
 ```
 
-使用既有環境，不改共享driver/套件。已完成實驗使用 Python3.12.3、torch2.5.1+cu121、Transformers5.16.1、huggingface-hub1.29.0、tokenizers0.23.1、NumPy1.26.4、safetensors0.8.0、pyarrow24.0.0；完整環境記錄在封存run manifest。未驗證全新venv安裝。
+用既有環境，不安裝/更新共享套件或driver。已實跑環境：Python3.12.3、torch2.5.1+cu121、Transformers5.16.1、huggingface-hub1.29.0、tokenizers0.23.1、NumPy1.26.4、safetensors0.8.0、matplotlib3.11.0；完整runtime見attempt/analysis manifests。全新venv安裝未驗證。
 
-需要一張BF16 CUDA GPU，以及本地 `HF_HUB_CACHE`（預設 `~/.cache/huggingface/hub`）：
+本地資產（offline、不下載替代品）：
 
-- 模型/tokenizer：`Qwen/Qwen3-4B`，revision `1cfa9a7208912126459214e8b04321603b3df60c`。
-- 資料：`Salesforce/wikitext`，revision `b08601e04326c79dfdd32d625aee71d232d685c3`，`wikitext-2-raw-v1/test-00000-of-00001.parquet`。
-
-程式offline；缺資產時停止，不下載替代模型或縮減樣本。
+- Qwen/Qwen3-4B model/tokenizer revision `1cfa9a7208912126459214e8b04321603b3df60c`。
+- Salesforce/wikitext、wikitext-2-raw-v1 test revision `b08601e04326c79dfdd32d625aee71d232d685c3`。
+- 歷史 `results/phase1a_run.json`、`phase1a_config.json`、`phase1a_tokens.npz`、`phase1a.csv` 與manifest列出的原始artifact。
+- 一張≥19GiB空閒的BF16 CUDA GPU。本輪GPU2 RTX3090的UUID為 `GPU-74d97f46-6284-1055-698a-e2db4e9c744b`；每次先看inventory，不假設仍空閒。
 
 ## Run
 
-先確認所選GPU空閒；可指定index或UUID：
+### 逐層：只補缺少條件
 
 ```bash
-CUDA_VISIBLE_DEVICES=2 bash scripts/run_projection_quantization_sensitivity.sh
+CUDA_VISIBLE_DEVICES=GPU-74d97f46-6284-1055-698a-e2db4e9c744b \
+  bash scripts/run_layerwise_projection_sensitivity.sh results/layerwise_projection_sensitivity --resume
 ```
 
-預設output：`results/projection_quantization_sensitivity/`。重跑需新目錄：
+已提交conditions不覆寫，不重跑。完成訊息 `FINISHED 109/109 status=measured` 仍須獨立audit及人工要求對照。全部完成的resume不得執行model forward。
+
+新目錄完整重跑：
+
+```bash
+CUDA_VISIBLE_DEVICES=2 bash scripts/run_layerwise_projection_sensitivity.sh \
+  results/layerwise_projection_sensitivity/rerun_$(date -u +%Y%m%dT%H%M%SZ)
+```
+
+可先加 `--max-conditions 1`，實跑BF16與一個完整64-block介入，再移除該參數以`--resume`補其餘；總目標仍109，不縮blocks。活動run持有output file lock，第二個writer不得同時寫。
+
+### 歷史全層（本輪不重跑）
+
+舊結果在 `results/phase1a*`，不是已不存在的archive目錄。新執行全層14條件可用：
 
 ```bash
 CUDA_VISIBLE_DEVICES=2 bash scripts/run_projection_quantization_sensitivity.sh \
-  results/projection_quantization_sensitivity/run_$(date -u +%Y%m%dT%H%M%SZ)
+  results/projection_quantization_sensitivity/new_run
 ```
 
-固定設定：`scripts/projection_quantization_sensitivity_config.json`；可用 `--config` 指向先前保存的 `experiment_config.json`。程式在正式14條件前先跑一個已選block的兩個contexts，檢查BF16/WQ4、計分對齊及還原。成功訊息 `FINISHED status=measured conditions=14/14` 仍須配合實際artifact與控制核對。
-
-| 新output檔名 | 內容 |
-|---|---|
-| `block_metrics.csv` | 896筆逐block NLL、ΔNLL、KL與輸入/labels識別 |
-| `run_manifest.json` | 命令、環境、revisions、hash、module、控制與進度 |
-| `experiment_config.json` | 執行前設定快照 |
-| `sensitivity_report.md` | 摘要、paired CI、結論與限制 |
-| `sensitivity_analysis.json` | 未四捨五入的摘要與24個對比 |
-| `sampled_token_blocks.npz` | 64個2049-token blocks與原始索引 |
-| `paired_bootstrap_indices.npy` | seed42的2000×64配對重抽索引 |
-| `tokenizer/` | tokenizer設定與資產 |
-| `execution_<UTC>.log` / `blocked.md` | stdout/stderr與失敗紀錄 |
-
-不支援中斷續算；保留原output，解除問題後另選目錄重跑。CLI會拒絕覆寫已存在的manifest/CSV。
+舊runner不支援resume，新output拒絕覆寫；`--smoke-only`是控制不是正式條件。不要把新命名parser直接套到phase1a舊檔名。歷史原始命令/來源SHA保持當時內容；若需當時source，查Git history，不事後改manifest。
 
 ## Test
 
 ```bash
 source ~/.venv/bin/activate
 nvidia-smi
-OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 python -m unittest discover -s tests -v
-bash -n scripts/run_projection_quantization_sensitivity.sh scripts/check_projection_quantization_resources.sh
+OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 CUDA_VISIBLE_DEVICES='' python -m unittest discover -s tests -v
+bash -n scripts/run_layerwise_projection_sensitivity.sh scripts/run_projection_quantization_sensitivity.sh
 ```
 
-12 tests：原有RTN、row/zero/tie、資料不足、KL方向/chunk/shift、paired bootstrap、PPL、CSV與控制gate，加上改名後CLI/防覆寫及封存完整性回歸。CPU使用真實896筆的暫存副本重算後，analysis JSON與bootstrap draws和歷史版本逐byte相同；不寫入封存、不執行模型forward。
+CPU synthetic fixtures只放temporary dirs；涵蓋RTN zero/ties/group、scoring/KL方向/shift/chunks、PPL、paired bootstrap、單介入/例外還原、state bitwise、條件/row/cache/gate、集中度/reranking/zero/ties及CLI/圖表。真實896筆只做temporary分析回歸，不重跑舊GPU實驗。
 
-需要真模型smoke時（此次命名重構沒有重跑）：
-
-```bash
-CUDA_VISIBLE_DEVICES=2 bash scripts/run_projection_quantization_sensitivity.sh \
-  results/projection_quantization_sensitivity/smoke_$(date -u +%Y%m%dT%H%M%SZ) --smoke-only
-```
-
-smoke成功仍為0/14正式條件。沒有build/lint/type-check framework，不宣稱其通過。
+沒有build/lint/type-check framework；不宣稱這些或PR/CI通過。
 
 ## Evaluate
 
-針對**新命名格式**的run，先啟用venv並檢查GPU：
+109條件與必要控制齊備後，先啟用venv並檢查GPU，再執行CPU分析：
 
 ```bash
-python scripts/projection_quantization_sensitivity.py --analyze-only \
-  --output results/projection_quantization_sensitivity
-python scripts/verify_projection_quantization_sensitivity.py \
-  --output results/projection_quantization_sensitivity
+CUDA_VISIBLE_DEVICES='' python scripts/analyze_layerwise_projection_sensitivity.py \
+  --output results/layerwise_projection_sensitivity
+CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 \
+  python scripts/verify_layerwise_projection_sensitivity.py --output results/layerwise_projection_sensitivity
 ```
 
-如果有獨立smoke output，可另加 `--compare-smoke <smoke目錄>`。analyze只重算已有measurement，verifier檢查source/artifact hashes、重新tokenize、NumPy RTN及CI，輸出 `artifact_verification.json`；兩者都不是新GPU實驗。
+分析器檢查完整條件、paired identity、控制與來源；輸出逐block表、109摘要、216配對contrast/metric、8集中度profiles、2000×64 draws、3組PNG/PDF、報告及analysis manifest。
 
-**歷史結果保留舊格式，不交給新格式parser。** 原verifier與原source已一起封存，`ROOT`會指向當時source快照。若要重做舊artifact audit，先複製到暫存目錄避免改封存：
-
-```bash
-snapshot=archive/qwen3_projection_quantization_sensitivity_2026-09-08
-tmp=$(mktemp -d)
-cp -a "$snapshot/results/." "$tmp/"
-python "$snapshot/scripts/verify_phase1a.py" --output "$tmp" \
-  --compare-smoke "$tmp/smoke_20260908_fixed"
-```
-
-原始records中的cwd/絕對命令是當時執行紀錄，不事後改成新名稱；新實驗請用上方新入口。封存驗證器 `--help`、所有source hashes及artifact bytes在本次已核對；上述完整checkpoint audit未因改名重跑。
+Verifier重新讀checkpoint全398參數、NumPy重建108 RTN4權重、重新tokenize每一保存block、独立重算paired CI與重新排名的集中度；另外比對歷史/source/artifact hashes。`artifact_verification.json`不是唯一完成證據：須人工查看圖表及 `completion_audit.md` 的逐要求對照。
 
 ## Common Failures
 
 | Symptom | Likely Cause | Inspect | Fix |
 |---|---|---|---|
-| 找不到舊script或舊results路徑 | 檔案改名／歷史已封存 | [命名對照](onboarding.md#important-files) | 新run改用新入口；舊資料配封存source，不改manifest假裝新版產生 |
-| `CUDA unknown error` / cuInit999 | 舊basic-2新程序初始化失敗 | [歷史診斷](debug-report.md) | 管理員修復或換節點，不reset共享GPU |
-| `IncompleteSnapshotError` | 必需的指定revision資產未快取 | log/model/data路徑 | 提供原資產；現版已不要求非必需`.gitattributes` |
-| tokenizer整串長度warning | 先tokenize整份文本 | 保存blocks shape | 實際forward只有513/2049 tokens，未將整串傳模型 |
-| OOM／沒有空GPU | 資源改變或選錯卡 | `nvidia-smi`、execution log | 保存blocked並停止，不減sample／換模型 |
-| `Output already contains a run` | 防覆寫保護 | manifest與CSV | 指定新的output，不刪證據假裝續跑 |
-| report gate拒絕 | 條件/必要控制未齊 | `run_manifest.json` | 修正實際原因，不改旗標繞過 |
-| source/artifact hash mismatch | 修改了產生數據的source/asset，或用錯版本 | 對應run manifest與封存 | 保留對應版本，不重寫hash掩蓋 |
+| `Existing run requires --resume` | 防覆寫 | output manifest | 舊run加`--resume`，全重跑用新目錄 |
+| file lock error | 同output已有活動writer | 最新log與本次PID | 等原writer完成；不要殺別人的process或刪lock繞過 |
+| source/hash mismatch | 程式/歷史/cache/數據改變或錯output | manifest與source快照 | 查明差異，不改hash掩蓋；來源快照可重現原producer |
+| missing/corrupt BF16 hidden cache | 大型cache沒隨Git保存或檔案損毀 | BF16.json的hidden_cache與磁碟 | 提供原cache；另開新output全重跑可再生成，不能將缺cache宣稱通過resume |
+| `<19GiB`／OOM | GPU忙或容量不足 | nvidia-smi、attempt/error | 保存阻塞，提供足夠空GPU，不減樣本/換模型 |
+| checkpoint/data缺檔 | 固定revision cache不可用 | 歷史manifest的絕對asset path | 提供原revision，不替代、不自動下載 |
+| BF16不匹配歷史 | runtime/kernel/資產差異 | versions、TF32/CUBLAS/SDPA、hash | 先診斷，不放宽為allclose假通過 |
+| partial資料但無condition提交 | 該條件未完成或control失敗 | attempts/*.partial.json/failed_controls.json | 保留partial；解決問題後只補該缺少條件 |
+| analyzer拒絕不完整run | 條件或控制缺項 | manifest、conditions、attempts | 補真實缺項，不能改status繞過 |
 
 ## Recovery Steps
 
-1. 只看當次output的manifest、execution log和`blocked.md`，不要把封存中的舊阻塞當目前狀態。
-2. 缺GPU/checkpoint/data、OOM時回報未完成，由使用者 `/goal pause`；資源變動後才再試，不無限重試。
-3. `bash scripts/check_projection_quantization_resources.sh` 是資源檢查，固定GPU0；不是敏感度runner，也不能代替64 blocks/14條件。
-4. 解除問題後用新output跑smoke，再正式執行；之後核對數據、控制與CI。不自動開始後續實驗。
+1. 檢查**本輪**最近log/attempt/blocked；舊phase1a blocked只是歷史，不是目前資源狀態。
+2. 不覆寫或刪除已提交conditions、歷史檔案、failed attempt。後來attempt失敗不使之前已通過完整還原的原子條件失效。
+3. 缺資源/OOM就保存command/error與completed/missing清單，回報未完成並請使用者提供GPU/原資產或 `/goal pause`。不無限重試。
+4. 保持相同checkpoint/config/producer source；原資產可用後跑`--resume`，由完整性驗證選出缺少條件。若只有CPU validator已更新，可核驗/分析完整舊run；補missing條件仍拒絕producer source drift，需使用該run保存的`source/scripts/layerwise_projection_sensitivity.py`及原attempt環境，不改原hash。
+5. 全部完成後重算analysis、獨立verifier、no-op resume與逐條completion audit；不開始其他實驗。
 
 ## Useful Commands
 
 ```bash
 git status --short
 git diff --check
-python scripts/projection_quantization_sensitivity.py --help
-python scripts/verify_projection_quantization_sensitivity.py --help
+python scripts/layerwise_projection_sensitivity.py --help
+python scripts/analyze_layerwise_projection_sensitivity.py --help
+python scripts/verify_layerwise_projection_sensitivity.py --help
 ```
 
-封存中的PID/exit/log只代表歷史，不以舊PID控制目前程序。
+`.pid`和`.exit`只記當次程序，不能用歷史PID控制目前無關程序。先檢查PID命令與啟動時間。
 
 ## File Locations
 
 | Path | Purpose | Notes |
 |---|---|---|
-| `projection_quantization_sensitivity.md` | 目前規格 | 只改名稱，實驗條件不變 |
-| `scripts/projection_quantization_sensitivity.py` | runner及分析 | 數學與forward未改 |
-| `scripts/projection_quantization_sensitivity_config.json` | 固定設定 | 與原run config相同 |
-| `scripts/verify_projection_quantization_sensitivity.py` | 新格式artifact核驗 | 不支援混用舊檔名 |
-| `tests/test_projection_quantization_sensitivity.py` | 測試與命名回歸 | 暫存fixture不冒充實測 |
-| `results/` | 新run輸出／本次refactor驗證 | 不含偽造新版14條件結果 |
-| `archive/qwen3_projection_quantization_sensitivity_2026-09-08/` | 完整舊實驗bundle | 51個檔案逐byte保留，含舊source/docs/results及checksums |
+| `scripts/*layerwise_projection_sensitivity*` | runner/config/launcher/analyzer/verifier | 只本輪逐層實驗 |
+| `results/layerwise_projection_sensitivity/run_manifest.json` | 設定、來源、歷史hash、完成条件 | 初始producer快照不作事後改寫 |
+| `conditions/BF16.json`、`conditions/L*_W?4.json`（本輪目錄內） | 原始measurement與控制 | 每檔64列，全部109檔 |
+| `attempts/`（本輪目錄內） | actual command/environment、partial、cache | blocked不冒充成功 |
+| `block_metrics.csv`、`layer_summary.csv`、`paired_comparisons.csv` | 原始合表與統計 | 6976/109/216 rows |
+| `concentration.json`、`figures/`、`sensitivity_report.md` | 少數層集中度、图表、有限結論 | ALL不是聯合量化損害 |
+| `source/`、`analysis_manifest.json` | source快照與分析/plot runtime | byte-identical圖表只在本環境驗證 |
+| `artifact_verification.json`、`completion_audit.md` | 自動独立核驗及人工要求對照 | 兩者都要核對 |
+| `results/phase1a*`、`results/tokenizer/` | 唯讀歷史資產 | 本輪不改寫 |
 
 ## Operational Notes
 
-- 單GPU、eval、batch1、use_cache=False、SDPA固定FLASH_ATTENTION kernel、TF32關閉、deterministic algorithms；不需網路/API key。
-- scale/log-softmax/metric reduction FP32、前向BF16、bootstrap FP64。baseline hidden存CPU，不保存大量完整logits。
-- CUDA常數除法以FP32倒數乘法實作，RTN臨界值可能與CPU直接除法不同；不保證換PyTorch/CUDA/CPU後bitwise相同。舊完整audit已嚴格驗證216個介入hash。
-- 原run在basic-1 RTX3090 24GiB耗1055.90秒，峰值allocated7.810GiB；這是歷史資源紀錄，不是壓縮或加速比較。
-- CI抽樣單位是block；不把重算或smoke當獨立樣本，不把跨零解釋為已證明等價。
+- 單GPU、BF16、eval、batch1、no cache、FLASH_ATTENTION、deterministic、TF32 off；launcher固定CUBLAS workspace與4 CPU threads、HF offline。
+- 原始state GPU副本約7.5GiB是exact control開銷；baseline hidden CPU cache約640MiB，Git忽略但磁碟保留且hash鎖定。不要把這當量化節省。
+- CUDA scalar除法使用FP32倒數乘法；NumPy oracle顯式匹配此數值語意並嚴格比對BF16 SHA，未以allclose放寬RTN。
+- CI單位為固定64 blocks，2000 resamples不是獨立實驗數。跨零不證等價，多重比較未校正。
+- 集中度使用非負平均score；保留原始負ΔNLL，ALL是獨立介入分數之和而非可加性假設。
+- 本輪最終時長、實際峰值、已完成條件與測試證據見completion audit；不以歷史run時長替代本輪量測。
 
 ## Last Verified
 
-- Date: 2026-09-08，命名重構。
-- Verified commands: 12 unit/regression tests、兩個新CLI的`--help`、封存verifier的`--help`、新shell入口語法、source/archive hashes、896筆資料CPU分析重算、`git diff --check`。log：`results/naming_refactor_tests.log`。
-- Known unverified commands: 改名後完整GPU run/smoke未重跑（僅命名與路徑變更）；全新venv安裝、跨硬體bitwise重現未驗證。原版GPU成功與完成稽核保留在封存。
+- Date: 2026-09-08。
+- Verified commands: 109/109真實條件（兩次producer分別新增2及107）、新版no-op resume（skip109/new0/無forward）、22個CPU tests、shell syntax、三個CLI help；獨立398參數/108 RTN/6976 rows/216配對/8集中度核验；13個分析/圖表artifact重算逐byte相同。完整對照見本輪 `completion_audit.md`。
+- Known unverified commands: 全新venv安裝、跨硬體/套件bitwise重現；不能假設換環境圖表PNG/PDF逐byte相同。

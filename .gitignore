@@ -1,2 +1,6 @@
 __pycache__/
 *.py[cod]
+# Lossless ~640MiB resume cache remains on disk with SHA256 in BF16.json;
+# reproducible from the pinned checkpoint/blocks, not a Git source artifact.
+results/layerwise_projection_sensitivity/**/baseline_hidden.pt
+results/**/.run.lock

@@ -1,0 +1,15 @@
+test_concentration_limits_and_zero_denominator (tests.test_layerwise_projection_sensitivity.LayerwiseAnalysisTests.test_concentration_limits_and_zero_denominator) ... ok
+test_full_statistics_pairing_ppl_and_positive_score_sum (tests.test_layerwise_projection_sensitivity.LayerwiseAnalysisTests.test_full_statistics_pairing_ppl_and_positive_score_sum) ... ok
+test_interrupted_attempt_keeps_prior_valid_commits_for_analysis (tests.test_layerwise_projection_sensitivity.LayerwiseAnalysisTests.test_interrupted_attempt_keeps_prior_valid_commits_for_analysis) ... ok
+test_launcher_failure_and_cli (tests.test_layerwise_projection_sensitivity.LayerwiseAnalysisTests.test_launcher_failure_and_cli) ... ok
+test_projection_order_retains_exact_ties (tests.test_layerwise_projection_sensitivity.LayerwiseAnalysisTests.test_projection_order_retains_exact_ties) ... ok
+test_reranking_not_fixed_top_layers (tests.test_layerwise_projection_sensitivity.LayerwiseAnalysisTests.test_reranking_not_fixed_top_layers) ... ok
+test_contract_rejects_uncovered_controls_and_wrong_rows (tests.test_layerwise_projection_sensitivity.LayerwiseTests.test_contract_rejects_uncovered_controls_and_wrong_rows) ... ok
+test_full_bitwise_state_checks_and_exception_restore (tests.test_layerwise_projection_sensitivity.LayerwiseTests.test_full_bitwise_state_checks_and_exception_restore) ... ok
+test_grid (tests.test_layerwise_projection_sensitivity.LayerwiseTests.test_grid) ... ok
+test_resume_inventory_rejects_corruption_and_incomplete_gate (tests.test_layerwise_projection_sensitivity.LayerwiseTests.test_resume_inventory_rejects_corruption_and_incomplete_gate) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 17.669s
+
+OK

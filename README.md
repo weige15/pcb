@@ -1,39 +1,50 @@
 # Qwen3 Attention Projection Quantization Sensitivity
 
-比較 Qwen3-4B 的 **WQ／WK／WV 權重單獨做 4/8-bit 量化**，對 BF16 baseline 的 NLL、KL 與 PPL 影響。固定 WikiText-2 raw test、64 blocks、512/2048 預測位置，共14條件；不是 low-bit 加速實驗。
+研究 Qwen3-4B 的 WQ／WK／WV **權重表示誤差**對 BF16 的 NLL、KL 與 PPL 影響，不是 low-bit 加速或 scheduler 實驗。
 
-## 執行與測試
+## 逐層實驗（本輪）
 
-需要既有 `~/.venv`、可用 BF16 CUDA GPU，以及指定 revisions 的本地模型/資料。先確認空卡，再設定 `CUDA_VISIBLE_DEVICES`：
+固定歷史 checkpoint、64 blocks、每 block 2048 個預測位置、group128 RTN4。每次只量化**一層的一個 projection weight**，其餘仍原始 BF16，共108介入＋BF16。
+
+- [固定協定](results/layerwise_projection_sensitivity/protocol.md)
+- [報告及逐層圖表](results/layerwise_projection_sensitivity/sensitivity_report.md)
+- [逐block NLL/KL](results/layerwise_projection_sensitivity/block_metrics.csv) · [配對比較](results/layerwise_projection_sensitivity/paired_comparisons.csv)
+- [完成稽核](results/layerwise_projection_sensitivity/completion_audit.md)（只在全部實測及驗證完成後判定）
+
+需要既有 `~/.venv`、固定 revision 本地 checkpoint/data，以及至少19GiB空閒的 BF16 CUDA GPU。從 repo root 執行，先確認空卡：
 
 ```bash
 source ~/.venv/bin/activate
 nvidia-smi
-CUDA_VISIBLE_DEVICES=2 bash scripts/run_projection_quantization_sensitivity.sh
-OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 python -m unittest discover -s tests -v
+# 本輪目錄已存在：僅補缺少的條件；全部完成時不再forward。
+CUDA_VISIBLE_DEVICES=2 bash scripts/run_layerwise_projection_sensitivity.sh \
+  results/layerwise_projection_sensitivity --resume
+# 重新執行全部條件，必須使用新目錄：
+CUDA_VISIBLE_DEVICES=2 bash scripts/run_layerwise_projection_sensitivity.sh \
+  results/layerwise_projection_sensitivity/rerun_$(date -u +%Y%m%dT%H%M%SZ)
 ```
 
-入口先跑 BF16/WQ4 smoke。新執行預設寫入 `results/projection_quantization_sensitivity/`，已有結果會拒絕覆寫；可指定新的 output 目錄。只跑 smoke 時加 `--smoke-only`。
+設定在 `scripts/layerwise_projection_sensitivity_config.json`；每條件原子提交64筆數據及全state/輸出還原控制。`--max-conditions 1` 可先完成BF16及第一個完整介入再resume，不減少總樣本或總條件。
 
-## 名稱與用途
+## 測試、重新分析與獨立驗證
 
-| 檔案 | 用途 |
-|---|---|
-| [`projection_quantization_sensitivity.md`](projection_quantization_sensitivity.md) | 實驗規格 |
-| `scripts/projection_quantization_sensitivity.py` | 權重量化、介入控制、NLL/KL 計分與統計 |
-| `scripts/projection_quantization_sensitivity_config.json` | 固定 revisions、條件、抽樣與數值設定 |
-| `scripts/run_projection_quantization_sensitivity.sh` | 實驗執行入口 |
-| `scripts/verify_projection_quantization_sensitivity.py` | 數據、權重雜湊與 paired CI 核驗 |
-| `scripts/check_projection_quantization_resources.sh` | GPU／模型／資料資源預檢 |
+先啟用環境並檢查GPU，再執行（下列均不跑model forward）：
 
-新輸出用內容命名：`block_metrics.csv`、`run_manifest.json`、`sensitivity_report.md`、`sensitivity_analysis.json`、`sampled_token_blocks.npz`。
+```bash
+OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 python -m unittest discover -s tests -v
+python scripts/analyze_layerwise_projection_sensitivity.py --output results/layerwise_projection_sensitivity
+python scripts/verify_layerwise_projection_sensitivity.py --output results/layerwise_projection_sensitivity
+```
 
-## 已完成實驗與文件
+未完成109條件或控制失敗時，分析器拒絕產出完整報告。不要只以manifest、CSV列數或tests綠燈認定完成。
 
-2026-09-08 的14條件、896筆原始數據已完成；本次只調整命名，**沒有重跑 GPU 實驗或改寫歷史結果**。
+## 歷史全層實驗（保留不重跑）
 
-- [已完成實驗：報告](archive/qwen3_projection_quantization_sensitivity_2026-09-08/results/phase1a_report.md) · [逐block數據](archive/qwen3_projection_quantization_sensitivity_2026-09-08/results/phase1a.csv) · [完成稽核](archive/qwen3_projection_quantization_sensitivity_2026-09-08/results/phase1a_audit.md)
-- [封存說明](archive/README.md)：舊階段代號只留在歷史bundle，原始命令、來源、檔名與SHA256不作事後改寫。
-- [Runbook](doc/runbook.md)：執行、測試、驗證與故障恢復。
-- [Onboarding](doc/onboarding.md)：結構、命名對照及安全修改方式。
-- [歷史診斷入口](doc/debug-report.md)
+[原規格](projection_quantization_sensitivity.md)：一次量化所有層的一種projection、4/8-bit、512/2048位置，共14條件、896筆。
+
+歷史bundle已由commit `d6f629c` 搬到 `results/`，原檔名、命令與SHA256不作事後改寫：
+[報告](results/phase1a_report.md) · [數據](results/phase1a.csv) · [歷史稽核](results/phase1a_audit.md)。舊source名稱只是歷史provenance，不冒充新版程式產生。
+
+全層實驗入口仍為 `scripts/run_projection_quantization_sensitivity.sh`；它不支援續跑，重新執行需指定新output。本輪沿用其量化與計分函式，不重跑舊14條件。
+
+[Runbook](doc/runbook.md)：環境、命令、恢復與限制。 [Onboarding](doc/onboarding.md)：程式結構與安全修改。缺資源時保留 `blocked.md`，回報未完成並提供所缺GPU/原始資產，不縮樣本或換模型。

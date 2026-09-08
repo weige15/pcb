@@ -160,15 +160,13 @@ class ProjectionQuantizationSensitivityTests(unittest.TestCase):
             self.assertEqual(manifest.read_text(), '{"test_only": true}\n')
             self.assertFalse((Path(directory) / "block_metrics.csv").exists())
 
-    def test_archived_results_and_renamed_analysis_are_unchanged(self):
-        archive = ROOT / "archive/qwen3_projection_quantization_sensitivity_2026-09-08"
-        checksums = json.loads((archive / "snapshot_checksums.json").read_text())
-        for name, expected in checksums.items():
-            self.assertEqual(hashlib.sha256((archive / name).read_bytes()).hexdigest(), expected, name)
-        original = archive / "results"
+    def test_historical_results_and_renamed_analysis_are_unchanged(self):
+        # Commit d6f629c relocated the historical bundle to results/. Its old
+        # source names are provenance, not paths to silently rewrite or recreate.
+        original = ROOT / "results"
         recorded = json.loads((original / "phase1a_run.json").read_text())
-        for name, expected in recorded["source_sha256"].items():
-            self.assertEqual(hashlib.sha256((archive / name).read_bytes()).hexdigest(), expected, name)
+        for name, expected in recorded["artifacts_sha256"].items():
+            self.assertEqual(hashlib.sha256((original / name).read_bytes()).hexdigest(), expected, name)
         self.assertEqual(recorded["config"], self.cfg)
         with tempfile.TemporaryDirectory() as directory:
             out = Path(directory)

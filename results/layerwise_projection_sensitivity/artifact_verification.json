@@ -1,0 +1,49 @@
+{
+  "status": "PASS: independent artifact audit; manual prompt-to-artifact and visual review still required",
+  "historical_files_preserved": 42,
+  "real_conditions": 109,
+  "interventions": 108,
+  "full_state_tensors_per_control": 400,
+  "restored_predictive_checks": 216,
+  "producing_attempts": 2,
+  "retokenization": {
+    "rows": 4358,
+    "tokens": 299078,
+    "blocks": 64,
+    "predictions_per_block": 2048,
+    "tail_discarded": 1973,
+    "exact": true
+  },
+  "checkpoint_rtn": {
+    "original_parameters": 398,
+    "runtime_buffers_matched_to_history": 2,
+    "independent_numpy_rtn4_hashes_exact": 108,
+    "historical_quantizer_hashes_exact": 108
+  },
+  "raw_csv": {
+    "rows": 6976,
+    "scored_positions": 14286848,
+    "distinct_scored_positions": 131072,
+    "exact_condition_rows": true
+  },
+  "statistics": {
+    "summary_cells": 109,
+    "baseline_metric_cis": 218,
+    "paired_metric_contrasts": 216,
+    "concentration_profiles": 8,
+    "draws": [
+      2000,
+      64
+    ],
+    "independent_recalculation": true
+  },
+  "figure_files": [
+    "figures/layerwise_metrics.png",
+    "figures/layerwise_metrics.pdf",
+    "figures/paired_layerwise_differences.png",
+    "figures/paired_layerwise_differences.pdf",
+    "figures/layer_concentration.png",
+    "figures/layer_concentration.pdf"
+  ],
+  "verifier_sha256": "695baaa6ff9fa3896da40f7324b2bff37fa717a08a6ea553e1061ae8963dd5a3"
+}
