@@ -1,0 +1,17 @@
+PASS measured status measured
+PASS pinned fixed config config values match
+PASS source/history hashes 311 historical hashes
+PASS prompt/config hashes input hashes match
+PASS prompt shapes all fixed arrays
+PASS probe modes BF16 + both local FP8 modes
+PASS quality raw matrix 12288 token rows
+PASS retrieval raw matrix 24 retrieval rows
+PASS performance raw matrix 90 run records
+PASS per-request performance rows 66 complete runs
+PASS cache provenance/bytes 141 profiles
+PASS OOM/error retained 24 fixed-cell OOM records
+PASS 4-bit honest unsupported direct paged FP4
+PASS decision provisional NO-GO with zero passing points
+PASS independent verifier {"cache_profiles": 141, "direct_kernel_provenance": true, "four_bit_unsupported_recorded": true, "gates_recomputed": true, "history_hashes": true, "inputs": true, "pareto_recomputed": true, "performance_recomputed": true, "prompt_shapes_hashes": true, "quality_recomputed": true, "raw_performance_runs": 90, "raw_quality_rows": 12288, "retrieval_recomputed": true, "source_hashes": true}
+PASS validation log pycompile/unittest/shell/diff checks
+AUDIT_RESULT PASS

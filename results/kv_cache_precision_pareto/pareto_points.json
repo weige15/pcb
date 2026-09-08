@@ -1,0 +1,1019 @@
+{
+  "status": "analyzed",
+  "modes": [
+    "BF16",
+    "FP8_E4M3",
+    "FP8_E5M2"
+  ],
+  "quality": [
+    {
+      "mode": "BF16",
+      "prompt_length": 2048,
+      "delta_nll": {
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0
+      },
+      "kl": {
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0
+      },
+      "prompt_means_delta_nll": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prompt_means_kl": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "n_prompts": 8,
+      "tokens_per_prompt": 256
+    },
+    {
+      "mode": "BF16",
+      "prompt_length": 8192,
+      "delta_nll": {
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0
+      },
+      "kl": {
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0
+      },
+      "prompt_means_delta_nll": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prompt_means_kl": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "n_prompts": 8,
+      "tokens_per_prompt": 256
+    },
+    {
+      "mode": "FP8_E4M3",
+      "prompt_length": 2048,
+      "delta_nll": {
+        "mean": -0.004182126819308837,
+        "ci_low": -0.014900482895134844,
+        "ci_high": 0.0058181874775643455
+      },
+      "kl": {
+        "mean": 0.01373672426910353,
+        "ci_low": 0.008664262541616365,
+        "ci_high": 0.01960579895348225
+      },
+      "prompt_means_delta_nll": [
+        -0.005470770824807736,
+        -0.005166174020325681,
+        -0.011063601522910194,
+        -0.03333959497524697,
+        0.0161389013893615,
+        0.019941089014680446,
+        -0.009755074255959562,
+        -0.004741789359262505
+      ],
+      "prompt_means_kl": [
+        0.008427146685269109,
+        0.006186384866250278,
+        0.010650036985212483,
+        0.006738046453107778,
+        0.03105951689661901,
+        0.023602947004630247,
+        0.01142133951453296,
+        0.011808375747206369
+      ],
+      "n_prompts": 8,
+      "tokens_per_prompt": 256
+    },
+    {
+      "mode": "FP8_E4M3",
+      "prompt_length": 8192,
+      "delta_nll": {
+        "mean": 0.002990516935386052,
+        "ci_low": -0.006153463899285176,
+        "ci_high": 0.012771167108915465
+      },
+      "kl": {
+        "mean": 0.010619224385076481,
+        "ci_low": 0.009068154280579456,
+        "ci_high": 0.01240682358826412
+      },
+      "prompt_means_delta_nll": [
+        0.02603309905621587,
+        -0.01251446326791239,
+        -0.004467794121859631,
+        -0.017152631283970265,
+        0.01268797735534788,
+        0.0024265767812994,
+        0.0012711025523553798,
+        0.015640268411612174
+      ],
+      "prompt_means_kl": [
+        0.010741700574311234,
+        0.010228909048866525,
+        0.009785448421730666,
+        0.015116911943448368,
+        0.009441305409036971,
+        0.013871009473584005,
+        0.00806918553898946,
+        0.0076993246706446045
+      ],
+      "n_prompts": 8,
+      "tokens_per_prompt": 256
+    },
+    {
+      "mode": "FP8_E5M2",
+      "prompt_length": 2048,
+      "delta_nll": {
+        "mean": 0.00985928247559878,
+        "ci_low": -0.010781937457446543,
+        "ci_high": 0.031011966435250497
+      },
+      "kl": {
+        "mean": 0.035831966453079206,
+        "ci_low": 0.02968784807337144,
+        "ci_high": 0.04341535161823577
+      },
+      "prompt_means_delta_nll": [
+        -0.013011610195348133,
+        -0.028944690877327928,
+        0.00932827719174334,
+        -0.024441615542572764,
+        0.04414691071852775,
+        0.06766123093819848,
+        -0.0012314225071825557,
+        0.02536718007875205
+      ],
+      "prompt_means_kl": [
+        0.027937873905299518,
+        0.023420047066332272,
+        0.03539720338469188,
+        0.03191150356375988,
+        0.038766762474683955,
+        0.03787159140008579,
+        0.05880067583029797,
+        0.0325500739994824
+      ],
+      "n_prompts": 8,
+      "tokens_per_prompt": 256
+    },
+    {
+      "mode": "FP8_E5M2",
+      "prompt_length": 8192,
+      "delta_nll": {
+        "mean": 0.0046568068049023595,
+        "ci_low": -0.017021164704083304,
+        "ci_high": 0.025749182430968017
+      },
+      "kl": {
+        "mean": 0.032332712639949066,
+        "ci_low": 0.026377350149777167,
+        "ci_high": 0.03818503785497358
+      },
+      "prompt_means_delta_nll": [
+        -0.04837738905280281,
+        -0.0035646442274310797,
+        0.050098939393117936,
+        0.03969210784407423,
+        0.02035201725750424,
+        0.009557409043481402,
+        -0.034145110965690895,
+        0.003641125146965851
+      ],
+      "prompt_means_kl": [
+        0.028758746374652297,
+        0.024557571968729784,
+        0.04607656458967437,
+        0.04078709621160939,
+        0.036164648955401925,
+        0.03656127271008719,
+        0.026221103016610806,
+        0.019534697292826784
+      ],
+      "n_prompts": 8,
+      "tokens_per_prompt": 256
+    }
+  ],
+  "retrieval": [
+    {
+      "mode": "BF16",
+      "em": 0.0,
+      "em_count": 0,
+      "n": 8,
+      "decline_percentage_points_vs_bf16": 0.0,
+      "pass": true
+    },
+    {
+      "mode": "FP8_E4M3",
+      "em": 0.0,
+      "em_count": 0,
+      "n": 8,
+      "decline_percentage_points_vs_bf16": 0.0,
+      "pass": true
+    },
+    {
+      "mode": "FP8_E5M2",
+      "em": 0.0,
+      "em_count": 0,
+      "n": 8,
+      "decline_percentage_points_vs_bf16": 0.0,
+      "pass": true
+    }
+  ],
+  "performance": [
+    {
+      "mode": "BF16",
+      "prompt_length": 2048,
+      "concurrency": 1,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 5585.03485864494,
+      "p95_tpot_ms": 72.27766653335671,
+      "mean_wall_ms": 23925.75174337253,
+      "mean_slo_goodput_rps": 0.04179598026440852,
+      "p95_slo_goodput_rps": 0.041814700871555345,
+      "max_gpu_allocated_bytes": 8905638400,
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "BF16",
+      "prompt_length": 2048,
+      "concurrency": 4,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 5906.679384608287,
+      "p95_tpot_ms": 80.81040602661304,
+      "mean_wall_ms": 25563.52599558886,
+      "mean_slo_goodput_rps": 0.15674009128436767,
+      "p95_slo_goodput_rps": 0.16256398437066683,
+      "max_gpu_allocated_bytes": 9925817856,
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "BF16",
+      "prompt_length": 2048,
+      "concurrency": 8,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 7150.585927604698,
+      "p95_tpot_ms": 74.96437015975187,
+      "mean_wall_ms": 26200.013142894022,
+      "mean_slo_goodput_rps": 0.30534578845022187,
+      "p95_slo_goodput_rps": 0.3061210655057282,
+      "max_gpu_allocated_bytes": 11286057472,
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "BF16",
+      "prompt_length": 2048,
+      "concurrency": 16,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 9506.922951631714,
+      "p95_tpot_ms": 78.25485400307704,
+      "mean_wall_ms": 29417.053627083078,
+      "mean_slo_goodput_rps": 0.543903757456836,
+      "p95_slo_goodput_rps": 0.5447337763262625,
+      "max_gpu_allocated_bytes": 14006537216,
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "BF16",
+      "prompt_length": 2048,
+      "concurrency": 32,
+      "repeats": 2,
+      "complete_repeats": 0,
+      "stable": false,
+      "p95_ttft_ms": null,
+      "p95_tpot_ms": null,
+      "mean_wall_ms": null,
+      "mean_slo_goodput_rps": 0.0,
+      "p95_slo_goodput_rps": 0.0,
+      "max_gpu_allocated_bytes": null,
+      "errors": [
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 338, in generate_batch\n    logits = forward_logits(model, prompt_t, cache, 0)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 299, in forward_logits\n    hidden = qwen_attention(model, model.model.embed_tokens(input_ids), positions, cache, start)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 291, in qwen_attention\n    hidden = residual + layer.mlp(layer.post_attention_layernorm(hidden))\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1736, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1747, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py\", line 82, in forward\n    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1736, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1747, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/transformers/activations.py\", line 103, in forward\n    return nn.functional.silu(input)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/functional.py\", line 2380, in silu\n    return torch._C._nn.silu(input)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.19 GiB. GPU 0 has a total capacity of 23.56 GiB of which 663.00 MiB is free. Including non-PyTorch memory, this process has 22.90 GiB memory in use. Of the allocated memory 21.51 GiB is allocated by PyTorch, and 1.06 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n",
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 338, in generate_batch\n    logits = forward_logits(model, prompt_t, cache, 0)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 299, in forward_logits\n    hidden = qwen_attention(model, model.model.embed_tokens(input_ids), positions, cache, start)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 291, in qwen_attention\n    hidden = residual + layer.mlp(layer.post_attention_layernorm(hidden))\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1736, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1747, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py\", line 82, in forward\n    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1736, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1747, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/transformers/activations.py\", line 103, in forward\n    return nn.functional.silu(input)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/functional.py\", line 2380, in silu\n    return torch._C._nn.silu(input)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.19 GiB. GPU 0 has a total capacity of 23.56 GiB of which 663.00 MiB is free. Including non-PyTorch memory, this process has 22.90 GiB memory in use. Of the allocated memory 21.51 GiB is allocated by PyTorch, and 1.06 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+      ],
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "BF16",
+      "prompt_length": 8192,
+      "concurrency": 1,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 22646.044170681853,
+      "p95_tpot_ms": 72.92133222548655,
+      "mean_wall_ms": 41140.66865097266,
+      "mean_slo_goodput_rps": 0.02430684884859753,
+      "p95_slo_goodput_rps": 0.024309476669198853,
+      "max_gpu_allocated_bytes": 9811660288,
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "BF16",
+      "prompt_length": 8192,
+      "concurrency": 4,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 26286.627475032583,
+      "p95_tpot_ms": 73.08899046323609,
+      "mean_wall_ms": 44896.421075449325,
+      "mean_slo_goodput_rps": 0.0890940038410475,
+      "p95_slo_goodput_rps": 0.08914943780175535,
+      "max_gpu_allocated_bytes": 13549905408,
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "BF16",
+      "prompt_length": 8192,
+      "concurrency": 8,
+      "repeats": 2,
+      "complete_repeats": 0,
+      "stable": false,
+      "p95_ttft_ms": null,
+      "p95_tpot_ms": null,
+      "mean_wall_ms": null,
+      "mean_slo_goodput_rps": 0.0,
+      "p95_slo_goodput_rps": 0.0,
+      "max_gpu_allocated_bytes": null,
+      "errors": [
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 338, in generate_batch\n    logits = forward_logits(model, prompt_t, cache, 0)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 299, in forward_logits\n    hidden = qwen_attention(model, model.model.embed_tokens(input_ids), positions, cache, start)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 291, in qwen_attention\n    hidden = residual + layer.mlp(layer.post_attention_layernorm(hidden))\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1736, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1747, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py\", line 82, in forward\n    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))\n                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.19 GiB. GPU 0 has a total capacity of 23.56 GiB of which 307.00 MiB is free. Including non-PyTorch memory, this process has 23.25 GiB memory in use. Of the allocated memory 21.85 GiB is allocated by PyTorch, and 1.07 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n",
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 338, in generate_batch\n    logits = forward_logits(model, prompt_t, cache, 0)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 299, in forward_logits\n    hidden = qwen_attention(model, model.model.embed_tokens(input_ids), positions, cache, start)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 291, in qwen_attention\n    hidden = residual + layer.mlp(layer.post_attention_layernorm(hidden))\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1736, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1747, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py\", line 82, in forward\n    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))\n                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.19 GiB. GPU 0 has a total capacity of 23.56 GiB of which 307.00 MiB is free. Including non-PyTorch memory, this process has 23.25 GiB memory in use. Of the allocated memory 21.85 GiB is allocated by PyTorch, and 1.07 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+      ],
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "BF16",
+      "prompt_length": 8192,
+      "concurrency": 16,
+      "repeats": 2,
+      "complete_repeats": 0,
+      "stable": false,
+      "p95_ttft_ms": null,
+      "p95_tpot_ms": null,
+      "mean_wall_ms": null,
+      "mean_slo_goodput_rps": 0.0,
+      "p95_slo_goodput_rps": 0.0,
+      "max_gpu_allocated_bytes": null,
+      "errors": [
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 336, in generate_batch\n    cache = StaticPagedKV(bsz, prompt_len + output_len, mode, workspace)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 142, in __init__\n    self.v = torch.empty(shape, device=\"cuda\", dtype=dtype)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 9.28 GiB. GPU 0 has a total capacity of 23.56 GiB of which 6.04 GiB is free. Including non-PyTorch memory, this process has 17.51 GiB memory in use. Of the allocated memory 17.18 GiB is allocated by PyTorch, and 621.50 KiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n",
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 336, in generate_batch\n    cache = StaticPagedKV(bsz, prompt_len + output_len, mode, workspace)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 142, in __init__\n    self.v = torch.empty(shape, device=\"cuda\", dtype=dtype)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 9.28 GiB. GPU 0 has a total capacity of 23.56 GiB of which 6.04 GiB is free. Including non-PyTorch memory, this process has 17.51 GiB memory in use. Of the allocated memory 17.18 GiB is allocated by PyTorch, and 621.50 KiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+      ],
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "BF16",
+      "prompt_length": 8192,
+      "concurrency": 32,
+      "repeats": 2,
+      "complete_repeats": 0,
+      "stable": false,
+      "p95_ttft_ms": null,
+      "p95_tpot_ms": null,
+      "mean_wall_ms": null,
+      "mean_slo_goodput_rps": 0.0,
+      "p95_slo_goodput_rps": 0.0,
+      "max_gpu_allocated_bytes": null,
+      "errors": [
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 336, in generate_batch\n    cache = StaticPagedKV(bsz, prompt_len + output_len, mode, workspace)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 141, in __init__\n    self.k = torch.empty(shape, device=\"cuda\", dtype=dtype)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 18.56 GiB. GPU 0 has a total capacity of 23.56 GiB of which 6.04 GiB is free. Including non-PyTorch memory, this process has 17.51 GiB memory in use. Of the allocated memory 7.90 GiB is allocated by PyTorch, and 9.28 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n",
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 336, in generate_batch\n    cache = StaticPagedKV(bsz, prompt_len + output_len, mode, workspace)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 141, in __init__\n    self.k = torch.empty(shape, device=\"cuda\", dtype=dtype)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 18.56 GiB. GPU 0 has a total capacity of 23.56 GiB of which 6.04 GiB is free. Including non-PyTorch memory, this process has 17.51 GiB memory in use. Of the allocated memory 7.90 GiB is allocated by PyTorch, and 9.28 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+      ],
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "FP8_E4M3",
+      "prompt_length": 2048,
+      "concurrency": 1,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 5493.836864759214,
+      "p95_tpot_ms": 74.64279935654143,
+      "mean_wall_ms": 24426.1176266009,
+      "mean_slo_goodput_rps": 0.040940053164381374,
+      "p95_slo_goodput_rps": 0.041034383289226206,
+      "max_gpu_allocated_bytes": 8737866240,
+      "tpot_improvement_fraction_vs_bf16": -0.03272287189976164,
+      "goodput_improvement_fraction_vs_bf16": -0.02047869423356996
+    },
+    {
+      "mode": "FP8_E4M3",
+      "prompt_length": 2048,
+      "concurrency": 4,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 5934.332405321766,
+      "p95_tpot_ms": 76.12787119153997,
+      "mean_wall_ms": 25152.13192894589,
+      "mean_slo_goodput_rps": 0.15904100532027493,
+      "p95_slo_goodput_rps": 0.16010334682594585,
+      "max_gpu_allocated_bytes": 9246340608,
+      "tpot_improvement_fraction_vs_bf16": 0.05794470124962603,
+      "goodput_improvement_fraction_vs_bf16": 0.014679805383887468
+    },
+    {
+      "mode": "FP8_E4M3",
+      "prompt_length": 2048,
+      "concurrency": 8,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 7564.682869578246,
+      "p95_tpot_ms": 80.42232336476445,
+      "mean_wall_ms": 27478.306504548527,
+      "mean_slo_goodput_rps": 0.2913068758687829,
+      "p95_slo_goodput_rps": 0.29760521608564605,
+      "max_gpu_allocated_bytes": 9927102976,
+      "tpot_improvement_fraction_vs_bf16": -0.07280729756524984,
+      "goodput_improvement_fraction_vs_bf16": -0.04597709584498699
+    },
+    {
+      "mode": "FP8_E4M3",
+      "prompt_length": 2048,
+      "concurrency": 16,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 9759.66042886721,
+      "p95_tpot_ms": 83.19693064718854,
+      "mean_wall_ms": 30879.58046607673,
+      "mean_slo_goodput_rps": 0.5181478518527362,
+      "p95_slo_goodput_rps": 0.5197475611833329,
+      "max_gpu_allocated_bytes": 11288497152,
+      "tpot_improvement_fraction_vs_bf16": -0.0631536114541491,
+      "goodput_improvement_fraction_vs_bf16": -0.04735379237776971
+    },
+    {
+      "mode": "FP8_E4M3",
+      "prompt_length": 2048,
+      "concurrency": 32,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 14903.99069415871,
+      "p95_tpot_ms": 105.80800332955323,
+      "mean_wall_ms": 41850.53597204387,
+      "mean_slo_goodput_rps": 0.0,
+      "p95_slo_goodput_rps": 0.0,
+      "max_gpu_allocated_bytes": 14011547648,
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "FP8_E4M3",
+      "prompt_length": 8192,
+      "concurrency": 1,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 23384.47778116679,
+      "p95_tpot_ms": 78.41616049367825,
+      "mean_wall_ms": 42948.95535206888,
+      "mean_slo_goodput_rps": 0.02328635769402549,
+      "p95_slo_goodput_rps": 0.023520410841109802,
+      "max_gpu_allocated_bytes": 9190772224,
+      "tpot_improvement_fraction_vs_bf16": -0.0753528233850782,
+      "goodput_improvement_fraction_vs_bf16": -0.04198368784569628
+    },
+    {
+      "mode": "FP8_E4M3",
+      "prompt_length": 8192,
+      "concurrency": 4,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 26995.719936606474,
+      "p95_tpot_ms": 78.00350817491064,
+      "mean_wall_ms": 46742.17849154957,
+      "mean_slo_goodput_rps": 0.08557682391434197,
+      "p95_slo_goodput_rps": 0.08584133053252534,
+      "max_gpu_allocated_bytes": 11058357760,
+      "tpot_improvement_fraction_vs_bf16": -0.06724019145053806,
+      "goodput_improvement_fraction_vs_bf16": -0.03947717887929392
+    },
+    {
+      "mode": "FP8_E4M3",
+      "prompt_length": 8192,
+      "concurrency": 8,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 32991.30862003658,
+      "p95_tpot_ms": 85.94032876750491,
+      "mean_wall_ms": 54740.97713059746,
+      "mean_slo_goodput_rps": 0.0,
+      "p95_slo_goodput_rps": 0.0,
+      "max_gpu_allocated_bytes": 13551268352,
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "FP8_E4M3",
+      "prompt_length": 8192,
+      "concurrency": 16,
+      "repeats": 2,
+      "complete_repeats": 0,
+      "stable": false,
+      "p95_ttft_ms": null,
+      "p95_tpot_ms": null,
+      "mean_wall_ms": null,
+      "mean_slo_goodput_rps": 0.0,
+      "p95_slo_goodput_rps": 0.0,
+      "max_gpu_allocated_bytes": null,
+      "errors": [
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 338, in generate_batch\n    logits = forward_logits(model, prompt_t, cache, 0)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 299, in forward_logits\n    hidden = qwen_attention(model, model.model.embed_tokens(input_ids), positions, cache, start)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 278, in qwen_attention\n    q = attn.q_norm(attn.q_proj(hidden_norm).view(bsz, seq_len, 32, 128)).transpose(1, 2)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1736, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1747, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py\", line 62, in forward\n    variance = hidden_states.pow(2).mean(-1, keepdim=True)\n               ^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 23.56 GiB of which 789.00 MiB is free. Including non-PyTorch memory, this process has 22.78 GiB memory in use. Of the allocated memory 21.57 GiB is allocated by PyTorch, and 898.42 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n",
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 338, in generate_batch\n    logits = forward_logits(model, prompt_t, cache, 0)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 299, in forward_logits\n    hidden = qwen_attention(model, model.model.embed_tokens(input_ids), positions, cache, start)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 278, in qwen_attention\n    q = attn.q_norm(attn.q_proj(hidden_norm).view(bsz, seq_len, 32, 128)).transpose(1, 2)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1736, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1747, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py\", line 62, in forward\n    variance = hidden_states.pow(2).mean(-1, keepdim=True)\n               ^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 23.56 GiB of which 789.00 MiB is free. Including non-PyTorch memory, this process has 22.78 GiB memory in use. Of the allocated memory 21.57 GiB is allocated by PyTorch, and 898.42 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+      ],
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "FP8_E4M3",
+      "prompt_length": 8192,
+      "concurrency": 32,
+      "repeats": 2,
+      "complete_repeats": 0,
+      "stable": false,
+      "p95_ttft_ms": null,
+      "p95_tpot_ms": null,
+      "mean_wall_ms": null,
+      "mean_slo_goodput_rps": 0.0,
+      "p95_slo_goodput_rps": 0.0,
+      "max_gpu_allocated_bytes": null,
+      "errors": [
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 336, in generate_batch\n    cache = StaticPagedKV(bsz, prompt_len + output_len, mode, workspace)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 142, in __init__\n    self.v = torch.empty(shape, device=\"cuda\", dtype=dtype)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 9.28 GiB. GPU 0 has a total capacity of 23.56 GiB of which 6.04 GiB is free. Including non-PyTorch memory, this process has 17.51 GiB memory in use. Of the allocated memory 17.18 GiB is allocated by PyTorch, and 1.61 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n",
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 336, in generate_batch\n    cache = StaticPagedKV(bsz, prompt_len + output_len, mode, workspace)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 142, in __init__\n    self.v = torch.empty(shape, device=\"cuda\", dtype=dtype)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 9.28 GiB. GPU 0 has a total capacity of 23.56 GiB of which 6.04 GiB is free. Including non-PyTorch memory, this process has 17.51 GiB memory in use. Of the allocated memory 17.18 GiB is allocated by PyTorch, and 1.61 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+      ],
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "FP8_E5M2",
+      "prompt_length": 2048,
+      "concurrency": 1,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 5533.5813933983445,
+      "p95_tpot_ms": 75.962093539956,
+      "mean_wall_ms": 24788.47769193817,
+      "mean_slo_goodput_rps": 0.040342404433813976,
+      "p95_slo_goodput_rps": 0.04053033778068972,
+      "max_gpu_allocated_bytes": 8737735168,
+      "tpot_improvement_fraction_vs_bf16": -0.05097600937211921,
+      "goodput_improvement_fraction_vs_bf16": -0.03477788584928443
+    },
+    {
+      "mode": "FP8_E5M2",
+      "prompt_length": 2048,
+      "concurrency": 4,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 6037.231324717868,
+      "p95_tpot_ms": 78.3817879255295,
+      "mean_wall_ms": 25990.846929489635,
+      "mean_slo_goodput_rps": 0.15390065411768708,
+      "p95_slo_goodput_rps": 0.15410069889233324,
+      "max_gpu_allocated_bytes": 9246209536,
+      "tpot_improvement_fraction_vs_bf16": 0.030053284230297406,
+      "goodput_improvement_fraction_vs_bf16": -0.018115576834321856
+    },
+    {
+      "mode": "FP8_E5M2",
+      "prompt_length": 2048,
+      "concurrency": 8,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 7318.517606658861,
+      "p95_tpot_ms": 81.29451142843155,
+      "mean_wall_ms": 27627.38125701435,
+      "mean_slo_goodput_rps": 0.289650944899879,
+      "p95_slo_goodput_rps": 0.2940676537395808,
+      "max_gpu_allocated_bytes": 9926971904,
+      "tpot_improvement_fraction_vs_bf16": -0.08444199898151505,
+      "goodput_improvement_fraction_vs_bf16": -0.051400229326894586
+    },
+    {
+      "mode": "FP8_E5M2",
+      "prompt_length": 2048,
+      "concurrency": 16,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 9696.873489429709,
+      "p95_tpot_ms": 81.80567313437624,
+      "mean_wall_ms": 30460.430687991902,
+      "mean_slo_goodput_rps": 0.5252725774112077,
+      "p95_slo_goodput_rps": 0.5259083329188139,
+      "max_gpu_allocated_bytes": 11288497152,
+      "tpot_improvement_fraction_vs_bf16": -0.04537506556666204,
+      "goodput_improvement_fraction_vs_bf16": -0.0342545529244791
+    },
+    {
+      "mode": "FP8_E5M2",
+      "prompt_length": 2048,
+      "concurrency": 32,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 14835.125457844697,
+      "p95_tpot_ms": 87.65518001887911,
+      "mean_wall_ms": 37082.37197238486,
+      "mean_slo_goodput_rps": 0.0,
+      "p95_slo_goodput_rps": 0.0,
+      "max_gpu_allocated_bytes": 14011547648,
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "FP8_E5M2",
+      "prompt_length": 8192,
+      "concurrency": 1,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 23223.9694978809,
+      "p95_tpot_ms": 77.12877963140022,
+      "mean_wall_ms": 42437.11064953823,
+      "mean_slo_goodput_rps": 0.023567621786712303,
+      "p95_slo_goodput_rps": 0.023820158794551283,
+      "max_gpu_allocated_bytes": 9190772224,
+      "tpot_improvement_fraction_vs_bf16": -0.0576984440287438,
+      "goodput_improvement_fraction_vs_bf16": -0.030412295172020265
+    },
+    {
+      "mode": "FP8_E5M2",
+      "prompt_length": 8192,
+      "concurrency": 4,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 27053.56272684876,
+      "p95_tpot_ms": 76.75603175764064,
+      "mean_wall_ms": 46406.259339884855,
+      "mean_slo_goodput_rps": 0.08619766334388804,
+      "p95_slo_goodput_rps": 0.08660654475343582,
+      "max_gpu_allocated_bytes": 11058357760,
+      "tpot_improvement_fraction_vs_bf16": -0.05017227999953122,
+      "goodput_improvement_fraction_vs_bf16": -0.032508815097442745
+    },
+    {
+      "mode": "FP8_E5M2",
+      "prompt_length": 8192,
+      "concurrency": 8,
+      "repeats": 2,
+      "complete_repeats": 2,
+      "stable": true,
+      "p95_ttft_ms": 33207.50677291071,
+      "p95_tpot_ms": 79.05112256519679,
+      "mean_wall_ms": 53253.92422650475,
+      "mean_slo_goodput_rps": 0.0,
+      "p95_slo_goodput_rps": 0.0,
+      "max_gpu_allocated_bytes": 13551268352,
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "FP8_E5M2",
+      "prompt_length": 8192,
+      "concurrency": 16,
+      "repeats": 2,
+      "complete_repeats": 0,
+      "stable": false,
+      "p95_ttft_ms": null,
+      "p95_tpot_ms": null,
+      "mean_wall_ms": null,
+      "mean_slo_goodput_rps": 0.0,
+      "p95_slo_goodput_rps": 0.0,
+      "max_gpu_allocated_bytes": null,
+      "errors": [
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 338, in generate_batch\n    logits = forward_logits(model, prompt_t, cache, 0)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 299, in forward_logits\n    hidden = qwen_attention(model, model.model.embed_tokens(input_ids), positions, cache, start)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 278, in qwen_attention\n    q = attn.q_norm(attn.q_proj(hidden_norm).view(bsz, seq_len, 32, 128)).transpose(1, 2)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1736, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1747, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py\", line 62, in forward\n    variance = hidden_states.pow(2).mean(-1, keepdim=True)\n               ^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 23.56 GiB of which 789.00 MiB is free. Including non-PyTorch memory, this process has 22.78 GiB memory in use. Of the allocated memory 21.57 GiB is allocated by PyTorch, and 898.42 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n",
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 338, in generate_batch\n    logits = forward_logits(model, prompt_t, cache, 0)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 299, in forward_logits\n    hidden = qwen_attention(model, model.model.embed_tokens(input_ids), positions, cache, start)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 278, in qwen_attention\n    q = attn.q_norm(attn.q_proj(hidden_norm).view(bsz, seq_len, 32, 128)).transpose(1, 2)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1736, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1747, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/.venv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py\", line 62, in forward\n    variance = hidden_states.pow(2).mean(-1, keepdim=True)\n               ^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 23.56 GiB of which 789.00 MiB is free. Including non-PyTorch memory, this process has 22.78 GiB memory in use. Of the allocated memory 21.57 GiB is allocated by PyTorch, and 898.42 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+      ],
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    },
+    {
+      "mode": "FP8_E5M2",
+      "prompt_length": 8192,
+      "concurrency": 32,
+      "repeats": 2,
+      "complete_repeats": 0,
+      "stable": false,
+      "p95_ttft_ms": null,
+      "p95_tpot_ms": null,
+      "mean_wall_ms": null,
+      "mean_slo_goodput_rps": 0.0,
+      "p95_slo_goodput_rps": 0.0,
+      "max_gpu_allocated_bytes": null,
+      "errors": [
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 336, in generate_batch\n    cache = StaticPagedKV(bsz, prompt_len + output_len, mode, workspace)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 142, in __init__\n    self.v = torch.empty(shape, device=\"cuda\", dtype=dtype)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 9.28 GiB. GPU 0 has a total capacity of 23.56 GiB of which 6.04 GiB is free. Including non-PyTorch memory, this process has 17.51 GiB memory in use. Of the allocated memory 17.18 GiB is allocated by PyTorch, and 1.61 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n",
+        "Traceback (most recent call last):\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 588, in performance_one\n    run = generate_batch(model, prompts, mode, workspace, output_len)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 336, in generate_batch\n    cache = StaticPagedKV(bsz, prompt_len + output_len, mode, workspace)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py\", line 142, in __init__\n    self.v = torch.empty(shape, device=\"cuda\", dtype=dtype)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 9.28 GiB. GPU 0 has a total capacity of 23.56 GiB of which 6.04 GiB is free. Including non-PyTorch memory, this process has 17.51 GiB memory in use. Of the allocated memory 17.18 GiB is allocated by PyTorch, and 1.61 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+      ],
+      "tpot_improvement_fraction_vs_bf16": null,
+      "goodput_improvement_fraction_vs_bf16": null
+    }
+  ],
+  "max_stable_concurrency": [
+    {
+      "mode": "BF16",
+      "prompt_length": 2048,
+      "max_stable_concurrency": 16
+    },
+    {
+      "mode": "BF16",
+      "prompt_length": 8192,
+      "max_stable_concurrency": 4
+    },
+    {
+      "mode": "FP8_E4M3",
+      "prompt_length": 2048,
+      "max_stable_concurrency": 32
+    },
+    {
+      "mode": "FP8_E4M3",
+      "prompt_length": 8192,
+      "max_stable_concurrency": 8
+    },
+    {
+      "mode": "FP8_E5M2",
+      "prompt_length": 2048,
+      "max_stable_concurrency": 32
+    },
+    {
+      "mode": "FP8_E5M2",
+      "prompt_length": 8192,
+      "max_stable_concurrency": 8
+    }
+  ],
+  "gates": [
+    {
+      "mode": "BF16",
+      "system_admissible": true,
+      "quality_pass": true,
+      "nll_kl_pass": true,
+      "retrieval_pass": true,
+      "performance_pass": false,
+      "matched_performance_points": [],
+      "concurrency_route_points": [],
+      "gate_pass": false
+    },
+    {
+      "mode": "FP8_E4M3",
+      "system_admissible": true,
+      "quality_pass": false,
+      "nll_kl_pass": false,
+      "retrieval_pass": true,
+      "performance_pass": false,
+      "matched_performance_points": [],
+      "concurrency_route_points": [],
+      "gate_pass": false
+    },
+    {
+      "mode": "FP8_E5M2",
+      "system_admissible": true,
+      "quality_pass": false,
+      "nll_kl_pass": false,
+      "retrieval_pass": true,
+      "performance_pass": false,
+      "matched_performance_points": [],
+      "concurrency_route_points": [],
+      "gate_pass": false
+    }
+  ],
+  "pareto_points": [
+    {
+      "id": "FP8_E4M3/L2048/N1",
+      "mode": "FP8_E4M3",
+      "prompt_length": 2048,
+      "concurrency": 1,
+      "quality_pass": false,
+      "gate_pass": false,
+      "delta_nll_ci_high": 0.0058181874775643455,
+      "kl_ci_high": 0.01960579895348225,
+      "p95_ttft_ms": 5493.836864759214,
+      "p95_tpot_ms": 74.64279935654143,
+      "goodput_rps": 0.040940053164381374,
+      "cache_bytes": 169869312,
+      "dominated": false
+    },
+    {
+      "id": "FP8_E4M3/L2048/N4",
+      "mode": "FP8_E4M3",
+      "prompt_length": 2048,
+      "concurrency": 4,
+      "quality_pass": false,
+      "gate_pass": false,
+      "delta_nll_ci_high": 0.0058181874775643455,
+      "kl_ci_high": 0.01960579895348225,
+      "p95_ttft_ms": 5934.332405321766,
+      "p95_tpot_ms": 76.12787119153997,
+      "goodput_rps": 0.15904100532027493,
+      "cache_bytes": 679477248,
+      "dominated": false
+    },
+    {
+      "id": "FP8_E4M3/L2048/N8",
+      "mode": "FP8_E4M3",
+      "prompt_length": 2048,
+      "concurrency": 8,
+      "quality_pass": false,
+      "gate_pass": false,
+      "delta_nll_ci_high": 0.0058181874775643455,
+      "kl_ci_high": 0.01960579895348225,
+      "p95_ttft_ms": 7564.682869578246,
+      "p95_tpot_ms": 80.42232336476445,
+      "goodput_rps": 0.2913068758687829,
+      "cache_bytes": 1358954496,
+      "dominated": false
+    },
+    {
+      "id": "FP8_E4M3/L2048/N16",
+      "mode": "FP8_E4M3",
+      "prompt_length": 2048,
+      "concurrency": 16,
+      "quality_pass": false,
+      "gate_pass": false,
+      "delta_nll_ci_high": 0.0058181874775643455,
+      "kl_ci_high": 0.01960579895348225,
+      "p95_ttft_ms": 9759.66042886721,
+      "p95_tpot_ms": 83.19693064718854,
+      "goodput_rps": 0.5181478518527362,
+      "cache_bytes": 2717908992,
+      "dominated": false
+    },
+    {
+      "id": "FP8_E4M3/L8192/N1",
+      "mode": "FP8_E4M3",
+      "prompt_length": 8192,
+      "concurrency": 1,
+      "quality_pass": false,
+      "gate_pass": false,
+      "delta_nll_ci_high": 0.012771167108915465,
+      "kl_ci_high": 0.01240682358826412,
+      "p95_ttft_ms": 23384.47778116679,
+      "p95_tpot_ms": 78.41616049367825,
+      "goodput_rps": 0.02328635769402549,
+      "cache_bytes": 622854144,
+      "dominated": false
+    },
+    {
+      "id": "FP8_E4M3/L8192/N4",
+      "mode": "FP8_E4M3",
+      "prompt_length": 8192,
+      "concurrency": 4,
+      "quality_pass": false,
+      "gate_pass": false,
+      "delta_nll_ci_high": 0.012771167108915465,
+      "kl_ci_high": 0.01240682358826412,
+      "p95_ttft_ms": 26995.719936606474,
+      "p95_tpot_ms": 78.00350817491064,
+      "goodput_rps": 0.08557682391434197,
+      "cache_bytes": 2491416576,
+      "dominated": false
+    },
+    {
+      "id": "FP8_E5M2/L2048/N8",
+      "mode": "FP8_E5M2",
+      "prompt_length": 2048,
+      "concurrency": 8,
+      "quality_pass": false,
+      "gate_pass": false,
+      "delta_nll_ci_high": 0.031011966435250497,
+      "kl_ci_high": 0.04341535161823577,
+      "p95_ttft_ms": 7318.517606658861,
+      "p95_tpot_ms": 81.29451142843155,
+      "goodput_rps": 0.289650944899879,
+      "cache_bytes": 1358954496,
+      "dominated": false
+    },
+    {
+      "id": "FP8_E5M2/L2048/N16",
+      "mode": "FP8_E5M2",
+      "prompt_length": 2048,
+      "concurrency": 16,
+      "quality_pass": false,
+      "gate_pass": false,
+      "delta_nll_ci_high": 0.031011966435250497,
+      "kl_ci_high": 0.04341535161823577,
+      "p95_ttft_ms": 9696.873489429709,
+      "p95_tpot_ms": 81.80567313437624,
+      "goodput_rps": 0.5252725774112077,
+      "cache_bytes": 2717908992,
+      "dominated": false
+    },
+    {
+      "id": "FP8_E5M2/L8192/N1",
+      "mode": "FP8_E5M2",
+      "prompt_length": 8192,
+      "concurrency": 1,
+      "quality_pass": false,
+      "gate_pass": false,
+      "delta_nll_ci_high": 0.025749182430968017,
+      "kl_ci_high": 0.03818503785497358,
+      "p95_ttft_ms": 23223.9694978809,
+      "p95_tpot_ms": 77.12877963140022,
+      "goodput_rps": 0.023567621786712303,
+      "cache_bytes": 622854144,
+      "dominated": false
+    },
+    {
+      "id": "FP8_E5M2/L8192/N4",
+      "mode": "FP8_E5M2",
+      "prompt_length": 8192,
+      "concurrency": 4,
+      "quality_pass": false,
+      "gate_pass": false,
+      "delta_nll_ci_high": 0.025749182430968017,
+      "kl_ci_high": 0.03818503785497358,
+      "p95_ttft_ms": 27053.56272684876,
+      "p95_tpot_ms": 76.75603175764064,
+      "goodput_rps": 0.08619766334388804,
+      "cache_bytes": 2491416576,
+      "dominated": false
+    }
+  ],
+  "passing_pareto_points": [],
+  "bootstrap": {
+    "seed": 424242,
+    "replicates": 2000,
+    "unit": "quality prompt"
+  },
+  "provisional": true,
+  "four_bit": {
+    "supported": false,
+    "attempted": true,
+    "reason": "FlashInfer exposes FP4 utility/wrapper symbols but no direct paged FP4 prefill/decode attention entry point; torch has no native FP4 dtype. uint8 without a kernel is not counted as packed 4-bit.",
+    "torch_fp4_symbols": [],
+    "flashinfer_fp4_symbols": [
+      "fp4_quantization",
+      "fp4_quantize",
+      "mm_fp4",
+      "mxfp4_dequantize",
+      "mxfp4_dequantize_host",
+      "mxfp4_quantize",
+      "nvfp4_batched_quantize",
+      "nvfp4_block_scale_interleave",
+      "nvfp4_quantize",
+      "scaled_fp4_grouped_quantize",
+      "silu_and_mul_scaled_nvfp4_experts_quantize",
+      "trtllm_fp4_block_scale_moe",
+      "trtllm_fp4_block_scale_routed_moe"
+    ],
+    "direct_paged_fp4_symbols": [],
+    "checked_modules": [
+      "flashinfer",
+      "flashinfer.prefill",
+      "flashinfer.decode"
+    ]
+  }
+}

@@ -1,0 +1,648 @@
+{
+  "status": "prepared_no_model_forward",
+  "config_sha256": "79cef08f9079eb831194f3071e4090ac2fcf03d1ae6a2e5d68881f4816bac55d",
+  "model_id": "Qwen/Qwen3-4B",
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "tokenizer_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "dataset_id": "Salesforce/wikitext",
+  "dataset_revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+  "dataset_parquet": "/nfs/home/s314511048/.cache/huggingface/hub/datasets--Salesforce--wikitext/snapshots/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/test-00000-of-00001.parquet",
+  "dataset_parquet_sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+  "dataset_rows": 4358,
+  "joined_text_sha256": "696cca6b65a171b0a358a4be6732cdfdf2dd6164a32e20fd70e3c13fc4dfae83",
+  "token_stream_sha256_le_int64": "8ffcee84dd4b684ec631cb52845e18c9c181ce6fdb8b26d65a4ffdc3d35fbda3",
+  "token_count": 299078,
+  "tokenizer_call": {
+    "add_special_tokens": false,
+    "truncation": false,
+    "padding": false
+  },
+  "tokenizer_assets_sha256": {
+    "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+    "tokenizer.json": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+    "tokenizer_config.json": "1cc816812993bff176eb4f7495433b736f06fba9b6e7b05cac7b4a1780650c95"
+  },
+  "input_seed": 424242,
+  "prompt_lengths": [
+    2048,
+    8192
+  ],
+  "output_length": 256,
+  "performance_prompts_per_length": 32,
+  "quality_prompts_per_length": 8,
+  "selections": {
+    "2048": [
+      {
+        "prompt_id": 0,
+        "start_token": 0,
+        "target_start_token": 2048,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 1,
+        "start_token": 2304,
+        "target_start_token": 4352,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 2,
+        "start_token": 4608,
+        "target_start_token": 6656,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 3,
+        "start_token": 6912,
+        "target_start_token": 8960,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 4,
+        "start_token": 9216,
+        "target_start_token": 11264,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 5,
+        "start_token": 11520,
+        "target_start_token": 13568,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 6,
+        "start_token": 13824,
+        "target_start_token": 15872,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 7,
+        "start_token": 16128,
+        "target_start_token": 18176,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 8,
+        "start_token": 18432,
+        "target_start_token": 20480,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 9,
+        "start_token": 20736,
+        "target_start_token": 22784,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 10,
+        "start_token": 23040,
+        "target_start_token": 25088,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 11,
+        "start_token": 25344,
+        "target_start_token": 27392,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 12,
+        "start_token": 27648,
+        "target_start_token": 29696,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 13,
+        "start_token": 29952,
+        "target_start_token": 32000,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 14,
+        "start_token": 32256,
+        "target_start_token": 34304,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 15,
+        "start_token": 34560,
+        "target_start_token": 36608,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 16,
+        "start_token": 36864,
+        "target_start_token": 38912,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 17,
+        "start_token": 39168,
+        "target_start_token": 41216,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 18,
+        "start_token": 41472,
+        "target_start_token": 43520,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 19,
+        "start_token": 43776,
+        "target_start_token": 45824,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 20,
+        "start_token": 46080,
+        "target_start_token": 48128,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 21,
+        "start_token": 48384,
+        "target_start_token": 50432,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 22,
+        "start_token": 50688,
+        "target_start_token": 52736,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 23,
+        "start_token": 52992,
+        "target_start_token": 55040,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 24,
+        "start_token": 55296,
+        "target_start_token": 57344,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 25,
+        "start_token": 57600,
+        "target_start_token": 59648,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 26,
+        "start_token": 59904,
+        "target_start_token": 61952,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 27,
+        "start_token": 62208,
+        "target_start_token": 64256,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 28,
+        "start_token": 64512,
+        "target_start_token": 66560,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 29,
+        "start_token": 66816,
+        "target_start_token": 68864,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 30,
+        "start_token": 69120,
+        "target_start_token": 71168,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 31,
+        "start_token": 71424,
+        "target_start_token": 73472,
+        "prompt_tokens": 2048,
+        "target_tokens": 256
+      }
+    ],
+    "8192": [
+      {
+        "prompt_id": 0,
+        "start_token": 0,
+        "target_start_token": 8192,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 1,
+        "start_token": 8448,
+        "target_start_token": 16640,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 2,
+        "start_token": 16896,
+        "target_start_token": 25088,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 3,
+        "start_token": 25344,
+        "target_start_token": 33536,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 4,
+        "start_token": 33792,
+        "target_start_token": 41984,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 5,
+        "start_token": 42240,
+        "target_start_token": 50432,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 6,
+        "start_token": 50688,
+        "target_start_token": 58880,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 7,
+        "start_token": 59136,
+        "target_start_token": 67328,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 8,
+        "start_token": 67584,
+        "target_start_token": 75776,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 9,
+        "start_token": 76032,
+        "target_start_token": 84224,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 10,
+        "start_token": 84480,
+        "target_start_token": 92672,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 11,
+        "start_token": 92928,
+        "target_start_token": 101120,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 12,
+        "start_token": 101376,
+        "target_start_token": 109568,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 13,
+        "start_token": 109824,
+        "target_start_token": 118016,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 14,
+        "start_token": 118272,
+        "target_start_token": 126464,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 15,
+        "start_token": 126720,
+        "target_start_token": 134912,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 16,
+        "start_token": 135168,
+        "target_start_token": 143360,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 17,
+        "start_token": 143616,
+        "target_start_token": 151808,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 18,
+        "start_token": 152064,
+        "target_start_token": 160256,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 19,
+        "start_token": 160512,
+        "target_start_token": 168704,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 20,
+        "start_token": 168960,
+        "target_start_token": 177152,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 21,
+        "start_token": 177408,
+        "target_start_token": 185600,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 22,
+        "start_token": 185856,
+        "target_start_token": 194048,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 23,
+        "start_token": 194304,
+        "target_start_token": 202496,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 24,
+        "start_token": 202752,
+        "target_start_token": 210944,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 25,
+        "start_token": 211200,
+        "target_start_token": 219392,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 26,
+        "start_token": 219648,
+        "target_start_token": 227840,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 27,
+        "start_token": 228096,
+        "target_start_token": 236288,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 28,
+        "start_token": 236544,
+        "target_start_token": 244736,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 29,
+        "start_token": 244992,
+        "target_start_token": 253184,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 30,
+        "start_token": 253440,
+        "target_start_token": 261632,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      },
+      {
+        "prompt_id": 31,
+        "start_token": 261888,
+        "target_start_token": 270080,
+        "prompt_tokens": 8192,
+        "target_tokens": 256
+      }
+    ]
+  },
+  "retrieval": [
+    {
+      "retrieval_id": 0,
+      "needle": "\nThe retrieval answer for item R00 is cobalt-17.\n",
+      "query": "\nQuestion: What is the retrieval answer for item R00? Answer:",
+      "needle_token_count": 16,
+      "query_token_count": 16,
+      "needle_start": 4080,
+      "answer": "cobalt-17",
+      "filler_start": 73728,
+      "prompt_tokens": 8192
+    },
+    {
+      "retrieval_id": 1,
+      "needle": "\nThe retrieval answer for item R01 is cobalt-18.\n",
+      "query": "\nQuestion: What is the retrieval answer for item R01? Answer:",
+      "needle_token_count": 16,
+      "query_token_count": 16,
+      "needle_start": 4080,
+      "answer": "cobalt-18",
+      "filler_start": 81888,
+      "prompt_tokens": 8192
+    },
+    {
+      "retrieval_id": 2,
+      "needle": "\nThe retrieval answer for item R02 is cobalt-19.\n",
+      "query": "\nQuestion: What is the retrieval answer for item R02? Answer:",
+      "needle_token_count": 16,
+      "query_token_count": 16,
+      "needle_start": 4080,
+      "answer": "cobalt-19",
+      "filler_start": 90048,
+      "prompt_tokens": 8192
+    },
+    {
+      "retrieval_id": 3,
+      "needle": "\nThe retrieval answer for item R03 is cobalt-20.\n",
+      "query": "\nQuestion: What is the retrieval answer for item R03? Answer:",
+      "needle_token_count": 16,
+      "query_token_count": 16,
+      "needle_start": 4080,
+      "answer": "cobalt-20",
+      "filler_start": 98208,
+      "prompt_tokens": 8192
+    },
+    {
+      "retrieval_id": 4,
+      "needle": "\nThe retrieval answer for item R04 is cobalt-21.\n",
+      "query": "\nQuestion: What is the retrieval answer for item R04? Answer:",
+      "needle_token_count": 16,
+      "query_token_count": 16,
+      "needle_start": 4080,
+      "answer": "cobalt-21",
+      "filler_start": 106368,
+      "prompt_tokens": 8192
+    },
+    {
+      "retrieval_id": 5,
+      "needle": "\nThe retrieval answer for item R05 is cobalt-22.\n",
+      "query": "\nQuestion: What is the retrieval answer for item R05? Answer:",
+      "needle_token_count": 16,
+      "query_token_count": 16,
+      "needle_start": 4080,
+      "answer": "cobalt-22",
+      "filler_start": 114528,
+      "prompt_tokens": 8192
+    },
+    {
+      "retrieval_id": 6,
+      "needle": "\nThe retrieval answer for item R06 is cobalt-23.\n",
+      "query": "\nQuestion: What is the retrieval answer for item R06? Answer:",
+      "needle_token_count": 16,
+      "query_token_count": 16,
+      "needle_start": 4080,
+      "answer": "cobalt-23",
+      "filler_start": 122688,
+      "prompt_tokens": 8192
+    },
+    {
+      "retrieval_id": 7,
+      "needle": "\nThe retrieval answer for item R07 is cobalt-24.\n",
+      "query": "\nQuestion: What is the retrieval answer for item R07? Answer:",
+      "needle_token_count": 16,
+      "query_token_count": 16,
+      "needle_start": 4080,
+      "answer": "cobalt-24",
+      "filler_start": 130848,
+      "prompt_tokens": 8192
+    }
+  ],
+  "retrieval_answers": [
+    "cobalt-17",
+    "cobalt-18",
+    "cobalt-19",
+    "cobalt-20",
+    "cobalt-21",
+    "cobalt-22",
+    "cobalt-23",
+    "cobalt-24"
+  ],
+  "array_sha256": {
+    "performance_prompt_2048": "d299393fc41db1b0dee613b4613ed2b865a29f883eb1f98a5734aa27dd51995e",
+    "performance_target_2048": "6f74fc3e279ec42be1ae130eb9b824c49c4d971768aec2c15ffcc6571fc0f049",
+    "quality_prompt_2048": "1f70387723e88264763fff191766e6f4b55625f25d3912563aab5e2a1cc63fd1",
+    "quality_target_2048": "6ebf0af6f22721753de52ea08a1e29b106bb21ce087ad91daa31e101d27c79bd",
+    "performance_prompt_8192": "b032cb3ac4b2bdde0e223292e19728fe9606211ee2bbce4a89a7f61034ebb4c6",
+    "performance_target_8192": "bf96f8c15bc1e0d5a397326883faa9a950b9b9d3970fcb6a780b934a931b6bee",
+    "quality_prompt_8192": "98e9dd58a12508746e01e65ee32302626b68e010643ee6d0748b3543be5f93a3",
+    "quality_target_8192": "5d44a683dceb4a9c044b77f5a23f10ef845721d026fe7d3c666c9b81faf16e21",
+    "retrieval_prompt_8192": "5230c4365dd52c80d4feb64a3308a13b732907b88cb2212cf982c5a458a490f0"
+  },
+  "array_shapes": {
+    "performance_prompt_2048": [
+      32,
+      2048
+    ],
+    "performance_target_2048": [
+      32,
+      256
+    ],
+    "quality_prompt_2048": [
+      8,
+      2048
+    ],
+    "quality_target_2048": [
+      8,
+      256
+    ],
+    "performance_prompt_8192": [
+      32,
+      8192
+    ],
+    "performance_target_8192": [
+      32,
+      256
+    ],
+    "quality_prompt_8192": [
+      8,
+      8192
+    ],
+    "quality_target_8192": [
+      8,
+      256
+    ],
+    "retrieval_prompt_8192": [
+      8,
+      8192
+    ]
+  },
+  "array_dtypes": {
+    "performance_prompt_2048": "int64",
+    "performance_target_2048": "int64",
+    "quality_prompt_2048": "int64",
+    "quality_target_2048": "int64",
+    "performance_prompt_8192": "int64",
+    "performance_target_8192": "int64",
+    "quality_prompt_8192": "int64",
+    "quality_target_8192": "int64",
+    "retrieval_prompt_8192": "int64"
+  },
+  "selection_rule": "performance spans start at i*(prompt_length+output_length), quality is first eight; retrieval uses deterministic filler and needle template"
+}

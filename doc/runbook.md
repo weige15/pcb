@@ -143,3 +143,24 @@ python scripts/verify_layerwise_projection_sensitivity.py --help
 - Date: 2026-09-08。
 - Verified commands: 109/109真實條件（兩次producer分別新增2及107）、新版no-op resume（skip109/new0/無forward）、22個CPU tests、shell syntax、三個CLI help；獨立398參數/108 RTN/6976 rows/216配對/8集中度核验；13個分析/圖表artifact重算逐byte相同。完整對照見本輪 `completion_audit.md`。
 - Known unverified commands: 全新venv安裝、跨硬體/套件bitwise重現；不能假設換環境圖表PNG/PDF逐byte相同。
+
+## Hardware-real static KV-cache Pareto screen
+
+This independent scope lives under `results/kv_cache_precision_pareto/`; it does not alter historical results or the completed layerwise experiment. The frozen protocol/config are `results/kv_cache_precision_pareto/protocol.md` and `results/kv_cache_precision_pareto/experiment_config.json`. Model weights and compute remain BF16. Only locally supported direct FlashInfer paged prefill/decode cache payloads are system points; fake quantization and full-cache BF16 restoration are excluded.
+
+Before any model command:
+
+```bash
+source ~/.venv/bin/activate
+nvidia-smi
+```
+
+Select one idle GPU explicitly and run:
+
+```bash
+CUDA_VISIBLE_DEVICES=<idle-GPU-index-or-UUID> bash scripts/run_kv_cache_precision_pareto.sh --phase all
+CUDA_VISIBLE_DEVICES='' python scripts/analyze_kv_cache_precision_pareto.py --output results/kv_cache_precision_pareto
+CUDA_VISIBLE_DEVICES='' python scripts/independent_verifier.py --output results/kv_cache_precision_pareto
+```
+
+The launcher prepares exact prompt IDs first, then records BF16 cached-decode alignment, BF16/FP8 smoke, quality NLL/KL and retrieval EM, every fixed concurrency (1/4/8/16/32) and repeat, per-token timestamps, cache tensor bytes, direct-read provenance, vLLM/4-bit capability errors, GPU inventory, OOM and other errors. `pareto_report.md` reports provisional GO only for a non-dominated compressed point passing every frozen gate; otherwise it reports provisional NO-GO. If direct compressed attention is unavailable, preserve `blocked.md`, do not reduce the matrix or use a BF16 decompression path, and request `/goal pause` plus the missing resource.

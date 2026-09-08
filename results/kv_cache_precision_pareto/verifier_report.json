@@ -1,0 +1,28 @@
+{
+  "status": "verified",
+  "checks": {
+    "source_hashes": true,
+    "history_hashes": true,
+    "inputs": true,
+    "prompt_shapes_hashes": true,
+    "raw_quality_rows": 12288,
+    "raw_retrieval_rows": 24,
+    "raw_performance_runs": 90,
+    "cache_profiles": 141,
+    "direct_kernel_provenance": true,
+    "four_bit_unsupported_recorded": true,
+    "quality_recomputed": true,
+    "retrieval_recomputed": true,
+    "performance_recomputed": true,
+    "gates_recomputed": true,
+    "pareto_recomputed": true
+  },
+  "modes": [
+    "BF16",
+    "FP8_E4M3",
+    "FP8_E5M2"
+  ],
+  "expected_performance_records": 90,
+  "oom_or_error_records": 24,
+  "verified_utc": "2026-09-08T18:35:58.473916+00:00"
+}

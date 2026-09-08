@@ -1,0 +1,69 @@
+Wed Sep  9 00:46:20 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.159.03             Driver Version: 580.159.03     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 3090        On  |   00000000:1B:00.0 Off |                  N/A |
+| 74%   69C    P2            273W /  275W |   11149MiB /  24576MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GeForce RTX 3090        On  |   00000000:1C:00.0 Off |                  N/A |
+| 70%   67C    P2            272W /  275W |   10710MiB /  24576MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GeForce RTX 3090        On  |   00000000:1D:00.0 Off |                  N/A |
+| 30%   33C    P8             22W /  275W |       4MiB /  24576MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GeForce RTX 3090        On  |   00000000:1E:00.0 Off |                  N/A |
+| 78%   67C    P2            274W /  275W |    8410MiB /  24576MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA GeForce RTX 3090        On  |   00000000:89:00.0 Off |                  N/A |
+| 30%   28C    P8             18W /  275W |       4MiB /  24576MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA GeForce RTX 3090        On  |   00000000:8A:00.0 Off |                  N/A |
+|100%   72C    P2            272W /  275W |    8408MiB /  24576MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA GeForce RTX 3090        On  |   00000000:8B:00.0 Off |                  N/A |
+| 30%   26C    P8             17W /  275W |       4MiB /  24576MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA GeForce RTX 3090        On  |   00000000:8C:00.0 Off |                  N/A |
+| 34%   44C    P2            113W /  275W |    4118MiB /  24576MiB |     19%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A         4119991      C   python                                10700MiB |
+|    1   N/A  N/A          710060      C   python                                10700MiB |
+|    3   N/A  N/A         4122078      C   python                                 8400MiB |
+|    5   N/A  N/A          712091      C   python                                 8398MiB |
+|    7   N/A  N/A         4119468      C   python                                 4108MiB |
++-----------------------------------------------------------------------------------------+
+Launch UTC: 2026-09-08T16:46:20+00:00
+Command: phase=all output=results/kv_cache_precision_pareto CUDA_VISIBLE_DEVICES=2
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:00<01:06,  5.94it/s]Loading weights:   4%|▍         | 17/398 [00:00<00:04, 76.45it/s]Loading weights:   9%|▉         | 37/398 [00:00<00:03, 119.55it/s]Loading weights:  13%|█▎        | 53/398 [00:00<00:02, 131.00it/s]Loading weights:  18%|█▊        | 70/398 [00:00<00:02, 139.21it/s]Loading weights:  23%|██▎       | 91/398 [00:00<00:01, 157.14it/s]Loading weights:  27%|██▋       | 108/398 [00:00<00:01, 160.10it/s]Loading weights:  31%|███▏      | 125/398 [00:00<00:01, 162.52it/s]Loading weights:  36%|███▌      | 144/398 [00:01<00:01, 170.68it/s]Loading weights:  41%|████      | 162/398 [00:01<00:01, 165.90it/s]Loading weights:  45%|████▌     | 180/398 [00:01<00:01, 164.75it/s]Loading weights:  51%|█████     | 201/398 [00:01<00:01, 170.06it/s]Loading weights:  55%|█████▌    | 219/398 [00:01<00:01, 169.11it/s]Loading weights:  59%|█████▉    | 236/398 [00:01<00:01, 160.11it/s]Loading weights:  65%|██████▍   | 257/398 [00:01<00:00, 168.70it/s]Loading weights:  69%|██████▉   | 276/398 [00:01<00:00, 174.10it/s]Loading weights:  74%|███████▍  | 294/398 [00:01<00:00, 166.21it/s]Loading weights:  79%|███████▊  | 313/398 [00:02<00:00, 166.40it/s]Loading weights:  84%|████████▍ | 335/398 [00:02<00:00, 176.03it/s]Loading weights:  89%|████████▉ | 356/398 [00:02<00:00, 185.20it/s]Loading weights:  95%|█████████▍| 377/398 [00:02<00:00, 189.58it/s]Loading weights: 100%|██████████| 398/398 [00:02<00:00, 163.67it/s]
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:00<01:36,  4.09it/s]Loading weights:   4%|▎         | 14/398 [00:00<00:07, 50.51it/s]Loading weights:   7%|▋         | 27/398 [00:00<00:04, 74.86it/s]Loading weights:  12%|█▏        | 47/398 [00:00<00:03, 110.90it/s]Loading weights:  15%|█▌        | 60/398 [00:00<00:03, 111.15it/s]Loading weights:  20%|██        | 80/398 [00:00<00:02, 132.57it/s]Loading weights:  24%|██▍       | 95/398 [00:00<00:02, 133.22it/s]Loading weights:  28%|██▊       | 113/398 [00:01<00:01, 142.90it/s]Loading weights:  32%|███▏      | 128/398 [00:01<00:01, 140.31it/s]Loading weights:  37%|███▋      | 146/398 [00:01<00:01, 145.58it/s]Loading weights:  40%|████      | 161/398 [00:01<00:01, 141.57it/s]Loading weights:  45%|████▍     | 179/398 [00:01<00:01, 149.90it/s]Loading weights:  49%|████▉     | 195/398 [00:01<00:01, 152.37it/s]Loading weights:  54%|█████▎    | 213/398 [00:01<00:01, 153.03it/s]Loading weights:  58%|█████▊    | 229/398 [00:01<00:01, 154.61it/s]Loading weights:  62%|██████▏   | 245/398 [00:01<00:00, 155.93it/s]Loading weights:  66%|██████▌   | 261/398 [00:01<00:00, 150.65it/s]Loading weights:  70%|██████▉   | 278/398 [00:02<00:00, 156.10it/s]Loading weights:  74%|███████▍  | 294/398 [00:02<00:00, 151.50it/s]Loading weights:  78%|███████▊  | 311/398 [00:02<00:00, 153.95it/s]Loading weights:  82%|████████▏ | 327/398 [00:02<00:00, 148.93it/s]Loading weights:  86%|████████▋ | 344/398 [00:02<00:00, 152.96it/s]Loading weights:  90%|█████████ | 360/398 [00:02<00:00, 151.68it/s]Loading weights:  95%|█████████▍| 377/398 [00:02<00:00, 152.76it/s]Loading weights:  99%|█████████▊| 393/398 [00:02<00:00, 147.94it/s]Loading weights: 100%|██████████| 398/398 [00:02<00:00, 137.89it/s]
+Traceback (most recent call last):
+  File "/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py", line 682, in <module>
+    main()
+  File "/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py", line 662, in main
+    run_quality(out, manifest, arrays); manifest["quality_status"] = "complete"; write_manifest(out, manifest)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py", line 520, in run_quality
+    verify_bf16_alignment(out, model, arrays, workspace, manifest)
+  File "/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py", line 511, in verify_bf16_alignment
+    require(mean_nll_abs <= 5e-4, f"BF16 cached decode does not align with no-cache baseline: {result}")
+  File "/nfs/home/s314511048/pcb/scripts/kv_cache_precision_pareto.py", line 51, in require
+    raise RuntimeError(message)
+RuntimeError: BF16 cached decode does not align with no-cache baseline: {'status': 'passed', 'prompt_length': 2048, 'prompt_id': 0, 'max_abs_log_probability_error': 0.9124622344970703, 'mean_abs_nll_error': 0.03145461902022362, 'cached_nll_sum': 651.7166281489442, 'no_cache_nll_sum': 652.137451171875, 'criterion': 'mean absolute NLL <= 5e-4; logits are compared as diagnostic because kernels may differ in reduction order'}

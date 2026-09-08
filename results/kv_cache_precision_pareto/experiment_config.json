@@ -1,0 +1,56 @@
+{
+  "model_id": "Qwen/Qwen3-4B",
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "tokenizer_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "dataset_id": "Salesforce/wikitext",
+  "dataset_revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+  "dataset_config": "wikitext-2-raw-v1",
+  "split": "test",
+  "weights_dtype": "bfloat16",
+  "compute_dtype": "bfloat16",
+  "attention_backend": "flashinfer",
+  "page_size": 16,
+  "cache_modes_requested": ["BF16", "FP8_E4M3", "FP8_E5M2"],
+  "probe_four_bit": true,
+  "prompt_lengths": [2048, 8192],
+  "output_length": 256,
+  "performance_concurrency": [1, 4, 8, 16, 32],
+  "quality_prompts_per_length": 8,
+  "performance_prompts_per_length": 32,
+  "retrieval_prompts": 8,
+  "input_seed": 424242,
+  "generation_seed": 424242,
+  "warmups": 1,
+  "repeats": 2,
+  "quality_bootstrap_replicates": 2000,
+  "quality_bootstrap_seed": 424242,
+  "quality_gates": {
+    "delta_nll_ci_high_max": 0.005,
+    "kl_ci_high_max": 0.002,
+    "retrieval_em_decline_percentage_points_max": 1.0,
+    "performance_improvement_min_fraction": 0.10,
+    "max_concurrency_improvement_min_fraction": 0.20,
+    "ttft_regression_max_fraction_for_concurrency_route": 0.05
+  },
+  "provisional_slo": {
+    "label": "screen-only provisional SLO; no deployment SLO was supplied",
+    "p95_ttft_ms": {"2048": 10000.0, "8192": 30000.0},
+    "p95_tpot_ms": 250.0
+  },
+  "tokenizer_call": {
+    "add_special_tokens": false,
+    "truncation": false,
+    "padding": false
+  },
+  "quantization": {
+    "fp8_scale": 1.0,
+    "format": "one-byte torch float8 payload; no whole-cache BF16 restoration"
+  },
+  "numerics": {
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "cpu_threads": 4,
+    "quality_metric_dtype": "float32",
+    "sampling": "greedy temperature=0 top_p=1 top_k=0; fixed 256 tokens; eos not shortening measurement"
+  }
+}

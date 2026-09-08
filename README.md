@@ -48,3 +48,19 @@ python scripts/verify_layerwise_projection_sensitivity.py --output results/layer
 全層實驗入口仍為 `scripts/run_projection_quantization_sensitivity.sh`；它不支援續跑，重新執行需指定新output。本輪沿用其量化與計分函式，不重跑舊14條件。
 
 [Runbook](doc/runbook.md)：環境、命令、恢復與限制。 [Onboarding](doc/onboarding.md)：程式結構與安全修改。缺資源時保留 `blocked.md`，回報未完成並提供所缺GPU/原始資產，不縮樣本或換模型。
+
+## Hardware-real static KV-cache screen (new independent scope)
+
+`results/kv_cache_precision_pareto/` is a separate Qwen3-4B experiment. It keeps weights/compute BF16 and tests only locally supported direct-read FlashInfer BF16/FP8 KV payloads under fixed homogeneous continuous batches. The protocol freezes 2048/8192 prompts, 256 output tokens, concurrency 1/4/8/16/32, seeds, warmups/repeats and provisional quality/SLO gates before model forward. It does not modify or reinterpret `main@1eef360` or the earlier result directories.
+
+After checking an idle GPU:
+
+```bash
+source ~/.venv/bin/activate
+nvidia-smi
+CUDA_VISIBLE_DEVICES=<idle-GPU> bash scripts/run_kv_cache_precision_pareto.sh --phase all
+CUDA_VISIBLE_DEVICES='' python scripts/analyze_kv_cache_precision_pareto.py --output results/kv_cache_precision_pareto
+CUDA_VISIBLE_DEVICES='' python scripts/independent_verifier.py --output results/kv_cache_precision_pareto
+```
+
+The runner records raw per-request/repeat metrics, timestamps, cache bytes, direct-kernel provenance, errors/OOM and the honest local 4-bit capability result. If direct compressed attention is unavailable, it writes `blocked.md` and must not use a BF16 decompression fallback.

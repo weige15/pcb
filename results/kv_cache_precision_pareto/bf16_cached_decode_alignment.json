@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "prompt_length": 2048,
+  "prompt_id": 0,
+  "max_abs_log_probability_error": 0.9124622344970703,
+  "mean_abs_nll_error": 0.03145461902022362,
+  "cached_nll_sum": 651.7166281489442,
+  "no_cache_nll_sum": 652.137451171875,
+  "criterion": "implementation sanity bound: mean absolute NLL <= 0.05 and max absolute log-probability <= 1.0; BF16 backend reduction differences are not a compressed-quality gate"
+}

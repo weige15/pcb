@@ -79,3 +79,9 @@ BF16 hidden cache約640MiB，SHA256在BF16條件檔案中；留在磁碟供resum
 - [x] Important files list is still accurate.
 - [x] Architecture map matches the current implementation.
 - [x] Troubleshooting section includes recent known failures.
+
+## Independent hardware-real static KV-cache screen
+
+The new `results/kv_cache_precision_pareto/` scope is separate from the historical and layerwise weight experiments above. It freezes Qwen3-4B BF16 weights/compute, exact 2048/8192 prompt IDs, 256 output tokens, homogeneous continuous batches at concurrency 1/4/8/16/32, and provisional gates before model forward. `scripts/kv_cache_precision_pareto.py` directly calls FlashInfer paged prefill/decode kernels with BF16 or locally supported one-byte FP8 caches; it does not implement a scheduler or a BF16 decompression fallback.
+
+Use `scripts/run_kv_cache_precision_pareto.sh` only after `source ~/.venv/bin/activate` and `nvidia-smi`, with one explicitly selected idle GPU. The output includes raw metrics, direct-kernel/cache-byte profiles, capability and error/OOM provenance, `pareto_report.md`, `completion_audit.md`, and the CPU-only `scripts/independent_verifier.py` result. A missing direct compressed kernel is a real block, not a reason to reduce the fixed matrix.
